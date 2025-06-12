@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useViewport } from "../src/hooks/useViewport";
-import { navbarItems } from "../confg/navbar-items";
+import { useViewport } from "../hooks/useViewport";
+import { navbarConfig } from "../confg/navbar";
 
 export interface NavbarItem {
 	label: string;
@@ -140,7 +140,7 @@ function DesktopNavbar() {
 				</div>
 
 				<ul className="flex gap-12 h-full font-league-spartan">
-					{navbarItems.map((item, index) => (
+					{navbarConfig.map((item, index) => (
 						<li
 							key={index}
 							className="relative h-full flex items-center"
@@ -276,7 +276,7 @@ function MobileNavbar() {
 				<div className="fixed inset-0 top-20 bg-white z-50 overflow-y-auto pb-16">
 					<div className="py-4">
 						<ul className="flex flex-col font-league-spartan">
-							{navbarItems.map((item, index) => (
+							{navbarConfig.map((item, index) => (
 								<li key={index} className="border-b border-neutral-100">
 									{item.hasSubmenu ? (
 										<div>
