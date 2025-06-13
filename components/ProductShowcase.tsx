@@ -43,7 +43,7 @@ export default function ProductShowcase({ className = "" }) {
 
 	return (
 		<section
-			className={`w-full bg-white py-16 px-4 sm:px-6 md:px-8 lg:py-24 overflow-hidden ${className}`}
+			className={`w-full bg-white py-7 px-4 sm:px-6 md:px-8 lg:py-24 overflow-hidden ${className}`}
 		>
 			<div className="max-w-screen-xl mx-auto">
 				<div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16 relative">
@@ -52,37 +52,33 @@ export default function ProductShowcase({ className = "" }) {
 							<div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-20 rounded-3xl"></div>
 							<div className="absolute -inset-4 bg-gray-50 rounded-full opacity-30 blur-xl"></div>
 							<Image
-							src="/showcase/product-bottles.webp"
-							alt="twotaks wellness products"
-							className="w-full h-auto max-h-[420px] lg:max-h-[500px] xl:max-h-[600px] object-contain relative z-10 drop-shadow-lg"
-							width={500}
-							height={500}
-						/>
+								src="/showcase/product-bottles.webp"
+								alt="twotaks wellness products"
+								className="w-full h-auto max-h-[450px] lg:max-h-[600px] xl:max-h-[850px] 2xl:max-h-[950px] object-contain relative z-10 drop-shadow-xl"
+								width={900}
+								height={900}
+								priority
+							/>
 						</div>
 					</div>
 					<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50 opacity-20 pointer-events-none"></div>
-					<div className="w-full lg:w-1/2 xl:w-5/12 mb-16 lg:mb-0 text-center lg:text-left relative z-10">
+					<div className="w-full lg:w-5/12 xl:w-4/12 mb-16 lg:mb-0 text-center lg:text-left relative z-10">
 						<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-brand font-black tracking-tight text-gray-900 mb-6 leading-none">
-							Super Performance
+							Unlock Your Potential
 						</h2>
 
 						<p className="text-lg md:text-xl text-gray-800 mb-6 font-medium max-w-2xl lg:max-w-none lg:mx-0 tracking-wide">
-							Everything you need to become a superhuman
+							Premium wellness for peak performance
 						</p>
 
 						<p className="text-base text-gray-600 mb-8 max-w-2xl lg:max-w-none lg:mx-0 leading-relaxed">
-							We're a next-generation wellness brand built to unlock your full
-							potential.
-							<br />
-							<br />
-							Inspired by the rituals of astronauts, elite athletes, and ancient
-							cultures, our formulas combine adaptogens, antioxidants, and nootropics
-							to naturally balance your body and mind—throughout the entire day.
+							Advanced formulas with adaptogens, antioxidants, and nootropics to
+							enhance focus, energy, and balance.
 						</p>
 
 						<div className="mt-6 mb-8">
 							<h3 className="text-lg font-brand font-bold mb-4 tracking-wide lg:text-left">
-								Key Benefits
+								What We Offer
 							</h3>
 							<div className="grid grid-cols-2 sm:grid-cols-2 gap-x-6 gap-y-1">
 								{benefits.map((benefit, index) => (

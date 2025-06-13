@@ -2,47 +2,31 @@ import { NavbarItems } from "../components/Navbar";
 
 export const navbarConfig: NavbarItems = [
 	{
-		label: "Daily Health",
+		label: "Shop",
 		href: "/daily-health",
 		hasSubmenu: true,
 		subItems: [
-			{ label: "Daily Health", href: "/daily-health" },
-			{ label: "Rest & Recovery", href: "/rest-recovery" },
-			{ label: "Bundles", href: "/bundles" },
+			{ label: "Super Morning", href: "/daily-health" },
+			{ label: "Super Immune", href: "/rest-recovery" },
+			{ label: "Super Brain", href: "/bundles" },
+			{ label: "Super Sleep", href: "/energy" },
+			{ label: "Super Human Bundle", href: "/bundles" },
 			{ label: "Shop All", href: "/shop" },
 		],
 	},
 	{
-		label: "Rest & Recovery",
+		label: "Ingredients",
 		href: "/rest-recovery",
-		hasSubmenu: true,
-		subItems: [
-			{ label: "Daily Health", href: "/daily-health" },
-			{ label: "Rest & Recovery", href: "/rest-recovery" },
-			{ label: "Bundles", href: "/bundles" },
-			{ label: "Shop All", href: "/shop" },
-		],
+		hasSubmenu: false,
 	},
 	{
-		label: "Bundles",
+		label: "Blog",
+		href: "/blog",
+		hasSubmenu: false,
+	},
+	{
+		label: "About Us",
 		href: "/bundles",
-		hasSubmenu: true,
-		subItems: [
-			{ label: "Daily Health", href: "/daily-health" },
-			{ label: "Rest & Recovery", href: "/rest-recovery" },
-			{ label: "Bundles", href: "/bundles" },
-			{ label: "Shop All", href: "/shop" },
-		],
-	},
-	{
-		label: "Shop All",
-		href: "/shop",
-		hasSubmenu: true,
-		subItems: [
-			{ label: "Daily Health", href: "/daily-health" },
-			{ label: "Rest & Recovery", href: "/rest-recovery" },
-			{ label: "Bundles", href: "/bundles" },
-			{ label: "Shop All", href: "/shop" },
-		],
+		hasSubmenu: false,
 	},
 ];

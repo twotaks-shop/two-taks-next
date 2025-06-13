@@ -28,7 +28,7 @@ function Logo() {
 				alt="TwoTaks Logo"
 				width={150}
 				height={40}
-				className="w-30"
+				className="w-40"
 			/>
 		</Link>
 	);
@@ -57,10 +57,10 @@ function NavItem({
 				}
 			}}
 			className={`transition-all duration-200 tracking-wide font-league-spartan ${
-				isMobile ? "block py-3 px-4 w-full text-sm" : ""
+				isMobile ? "block py-3 px-4 w-full text-md" : ""
 			} ${
 				active ? "text-black font-medium" : "text-neutral-600 hover:text-black"
-			} ${!isMobile && !active ? "text-[1rem] leading-tight" : ""}`}
+			} ${!isMobile && !active ? "text-[1.2rem] leading-tight" : ""}`}
 		>
 			{label}
 		</Link>
@@ -134,7 +134,7 @@ function DesktopNavbar() {
 
 	return (
 		<header className="fixed top-0 left-0 right-0 bg-white border-b border-neutral-200 w-full z-40">
-			<div className="container mx-auto flex items-center justify-between px-6 relative h-20">
+			<div className="container mx-auto flex items-center justify-between px-6 relative h-22">
 				<div className="flex-1 flex justify-start">
 					<Logo />
 				</div>

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import {
-	Montserrat,
-	League_Spartan,
-} from "next/font/google";
+import { Montserrat, League_Spartan } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const leagueSpartan = League_Spartan({
 	variable: "--font-league-spartan",
@@ -33,6 +31,7 @@ export default function RootLayout({
 			>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

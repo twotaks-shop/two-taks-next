@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -12,6 +12,7 @@ export interface Product {
 	imageUrl: string;
 	category: string;
 	productUrl: string;
+	ingredients: string[];
 }
 
 export function ProductCarousel({
@@ -75,7 +76,16 @@ export function ProductCarousel({
 		<section
 			className={`flex flex-col items-center justify-center w-full max-w-screen-xl mx-auto px-4 sm:px-6 ${className}`}
 		>
-			<div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+			<div className="text-center mb-8 max-w-3xl mx-auto">
+				<h2 className="text-3xl sm:text-4xl font-brand font-bold mb-4 tracking-tight text-gray-900">
+					Take a pick & enjoy!
+				</h2>
+				<p className="text-base sm:text-lg text-gray-600">
+					Find your daily balance supplement and explore all products.
+				</p>
+			</div>
+
+			<div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 mt-5">
 				{products.map((product, index) => (
 					<div key={product.id}>
 						<button
@@ -89,7 +99,7 @@ export function ProductCarousel({
 				))}
 			</div>
 
-			<div className="w-full flex flex-col items-center md:mt-4 lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16 lg:mt-8">
+			<div className="mt-12 w-full flex flex-col items-center lg:flex-row lg:items-center lg:justify-center lg:gap-12 xl:gap-16">
 				<div className="relative h-64 w-64 mx-auto overflow-hidden mt-8 mb-4 bg-white sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:h-[450px] xl:w-[450px] lg:mb-0 lg:mt-0">
 					{products.map((product, index) => (
 						<div
@@ -114,7 +124,6 @@ export function ProductCarousel({
 					))}
 				</div>
 
-				{/* Content container - right side on desktop */}
 				<div className="flex flex-col items-center sm:max-w-md md:max-w-lg lg:items-start lg:flex-1 lg:max-w-[40%] lg:justify-center">
 					<div className="flex justify-center space-x-2 mb-4 sm:space-x-2.5 md:space-x-3 md:mb-6 lg:justify-start">
 						{products.map((product, index) => (
@@ -148,10 +157,27 @@ export function ProductCarousel({
 						</div>
 					</div>
 
-					<div className="mt-4 md:mt-6 lg:mt-8">
-						<button className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
-							Experience
-						</button>
+					<div className="mt-4 md:mt-6">
+						<div className="mb-4">
+							<p className="text-sm font-medium text-gray-700 mb-2 lg:text-left text-center">
+								Ingredients:
+							</p>
+							<div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+								{products[activeIndex].ingredients.map((ingredient, idx) => (
+									<span
+										key={idx}
+										className="px-3 py-1 text-xs rounded-full text-gray-700 border border-gray-200"
+									>
+										{ingredient}
+									</span>
+								))}
+							</div>
+						</div>
+						<div className="flex justify-center w-full lg:justify-start">
+							<button className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
+								Experience
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

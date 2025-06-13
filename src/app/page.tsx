@@ -1,5 +1,24 @@
+import { ProductCarousel } from "../../components/ProductCarousel";
+import ProductShowcase from "../../components/ProductShowcase";
+import HeroBanner from "../../components/HeroBanner";
+import Standards from "../../components/Standards";
+import Ingredients from "../../components/Ingredients";
+import Reviews from "../../components/Reviews";
+import AboutUs from "../../components/AboutUs";
+import FAQ from "../../components/FAQ";
+
+
 export default function Home() {
 	return (
-		<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"></div>
+		<>
+			<HeroBanner />
+			<ProductShowcase />
+			<Standards />
+			<ProductCarousel className="py-20" />
+			<Ingredients className="my-20" />
+			<Reviews />
+			<AboutUs />
+			<FAQ />
+		</>
 	);
 }
