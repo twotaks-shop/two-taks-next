@@ -40,7 +40,7 @@ export default function AboutUs({ className = "" }: { className?: string }) {
 								unmatched energy.
 							</p>
 							<p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl lg:max-w-none mx-auto lg:mx-0">
-								But the journey didn't stop there. Realizing this was meant for
+								But the journey didn&apos;t stop there. Realizing this was meant for
 								everyone, they transformed their personal pursuit into a mission for all
 								to experience. Dive into the origin of Twotaks and explore how you too
 								can unleash your potential to BECOME A SUPER HUMAN.

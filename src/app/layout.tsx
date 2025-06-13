@@ -3,6 +3,8 @@ import { Montserrat, League_Spartan } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CartSidebar from "../../components/shop/CartSidebar";
+import MainContentWrapper from "../../components/MainContentWrapper";
 
 const leagueSpartan = League_Spartan({
 	variable: "--font-league-spartan",
@@ -29,9 +31,12 @@ export default function RootLayout({
 			<body
 				className={`${montserrat.variable} ${leagueSpartan.variable} antialiased`}
 			>
-				<Navbar />
-				{children}
-				<Footer />
+				<MainContentWrapper>
+					<Navbar />
+					{children}
+					<Footer />
+				</MainContentWrapper>
+				<CartSidebar />
 			</body>
 		</html>
 	);

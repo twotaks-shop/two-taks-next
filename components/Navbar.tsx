@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useViewport } from "../hooks/useViewport";
 import { navbarConfig } from "../confg/navbar";
+import CartIcon from "./shop/CartIcon";
 
 export interface NavbarItem {
 	label: string;
@@ -50,12 +51,7 @@ function NavItem({
 	return (
 		<Link
 			href={href}
-			onClick={(e) => {
-				if (onClick) {
-					e.preventDefault();
-					onClick();
-				}
-			}}
+			onClick={onClick}
 			className={`transition-all duration-200 tracking-wide font-league-spartan ${
 				isMobile ? "block py-3 px-4 w-full text-md" : ""
 			} ${
@@ -63,32 +59,6 @@ function NavItem({
 			} ${!isMobile && !active ? "text-[1.2rem] leading-tight" : ""}`}
 		>
 			{label}
-		</Link>
-	);
-}
-
-function CartIcon() {
-	return (
-		<Link
-			href="/cart"
-			className="flex items-center justify-center h-10 w-10 transition-colors duration-200 hover:bg-neutral-100 rounded-full"
-			aria-label="Shopping cart"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="20"
-				height="20"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="1.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			>
-				<circle cx="8" cy="21" r="1" />
-				<circle cx="19" cy="21" r="1" />
-				<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-			</svg>
 		</Link>
 	);
 }
@@ -132,6 +102,11 @@ function DesktopNavbar() {
 		}
 	};
 
+	const handleNavItemClick = () => {
+		setActiveItem(undefined);
+		setIsHoveringSubmenu(false);
+	};
+
 	return (
 		<header className="fixed top-0 left-0 right-0 bg-white border-b border-neutral-200 w-full z-40">
 			<div className="container mx-auto flex items-center justify-between px-6 relative h-22">
@@ -151,6 +126,7 @@ function DesktopNavbar() {
 								label={item.label}
 								href={item.href}
 								active={activeItem === item}
+								onClick={item.hasSubmenu ? undefined : handleNavItemClick}
 							/>
 							{item.hasSubmenu && activeItem === item && (
 								<div className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"></div>
@@ -180,6 +156,7 @@ function DesktopNavbar() {
 								<div key={index} className="mb-4">
 									<Link
 										href={subItem.href}
+										onClick={handleNavItemClick}
 										className="text-[1rem] leading-none font-league-spartan transition-all duration-200 text-black hover:translate-x-2"
 									>
 										{subItem.label}
@@ -205,6 +182,12 @@ function MobileNavbar() {
 		} else {
 			document.body.style.overflow = "hidden";
 		}
+	};
+
+	const closeMenu = () => {
+		setIsMenuOpen(false);
+		setExpandedItem(null);
+		document.body.style.overflow = "";
 	};
 
 	const toggleSubmenu = (item: NavbarItem) => {
@@ -309,6 +292,7 @@ function MobileNavbar() {
 																label={subItem.label}
 																href={subItem.href}
 																isMobile={true}
+																onClick={closeMenu}
 															/>
 														</li>
 													))}
@@ -316,7 +300,12 @@ function MobileNavbar() {
 											)}
 										</div>
 									) : (
-										<NavItem label={item.label} href={item.href} isMobile={true} />
+										<NavItem
+											label={item.label}
+											href={item.href}
+											isMobile={true}
+											onClick={closeMenu}
+										/>
 									)}
 								</li>
 							))}
@@ -325,6 +314,7 @@ function MobileNavbar() {
 						<div className="mt-6 px-4">
 							<Link
 								href="/account"
+								onClick={closeMenu}
 								className="flex items-center py-3 text-sm text-neutral-600 hover:text-black font-league-spartan"
 							>
 								<svg

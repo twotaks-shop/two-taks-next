@@ -3,14 +3,17 @@ import { NavbarItems } from "../components/Navbar";
 export const navbarConfig: NavbarItems = [
 	{
 		label: "Shop",
-		href: "/daily-health",
+		href: "/shop",
 		hasSubmenu: true,
 		subItems: [
-			{ label: "Super Morning", href: "/daily-health" },
-			{ label: "Super Immune", href: "/rest-recovery" },
-			{ label: "Super Brain", href: "/bundles" },
-			{ label: "Super Sleep", href: "/energy" },
-			{ label: "Super Human Bundle", href: "/bundles" },
+			{ label: "Super Morning", href: "/shop/collections/super-morning" },
+			{ label: "Super Immune", href: "/shop/collections/super-immune" },
+			{ label: "Super Brain", href: "/shop/collections/super-brain" },
+			{ label: "Super Sleep", href: "/shop/collections/super-sleep" },
+			{
+				label: "Super Human Bundle",
+				href: "/shop/collections/super-human-bundle",
+			},
 			{ label: "Shop All", href: "/shop" },
 		],
 	},

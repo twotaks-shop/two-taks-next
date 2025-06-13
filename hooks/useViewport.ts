@@ -24,7 +24,7 @@ export const useViewport = (breakpoint: number = 768): DeviceType => {
     return () => {
       window.removeEventListener('resize', updateDeviceType);
     };
-  }, [breakpoint]); // Re-run effect if breakpoint changes
+  }, [breakpoint]);
 
   return deviceType;
 };

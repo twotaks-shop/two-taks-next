@@ -138,7 +138,7 @@ export default function Reviews({ className = "" }: { className?: string }) {
 									<div className="flex mb-4">{renderStars(review.rating)}</div>
 
 									<p className="text-gray-600 leading-relaxed text-balance">
-										"{review.text}"
+										&apos;{review.text}&apos;
 									</p>
 								</div>
 							</div>
