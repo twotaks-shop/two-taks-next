@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { ShopifyCollection } from "../../lib/types";
 
@@ -26,10 +25,10 @@ export default function CollectionsSidebar({
 							href="/shop"
 							className={`block py-3 px-4
 							 transition-all duration-200 font-heading-regular ${
-								!activeCollection
-									? "bg-black text-white"
-									: "text-neutral-700 hover:bg-neutral-100"
-							}`}
+									!activeCollection
+										? "bg-black text-white"
+										: "text-neutral-700 hover:bg-neutral-100"
+								}`}
 						>
 							All Products
 						</Link>

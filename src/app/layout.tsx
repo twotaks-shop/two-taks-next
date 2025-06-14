@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import CartSidebar from "../../components/shop/CartSidebar";
 import MainContentWrapper from "../../components/MainContentWrapper";
+import AuthModalWrapper from "../../components/customer/AuthModalWrapper";
 
 const leagueSpartan = League_Spartan({
 	variable: "--font-league-spartan",
@@ -37,6 +38,7 @@ export default function RootLayout({
 					<Footer />
 				</MainContentWrapper>
 				<CartSidebar />
+				<AuthModalWrapper />
 			</body>
 		</html>
 	);

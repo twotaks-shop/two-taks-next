@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getCollections, shopifyClient } from "../../../lib/shopify";
+import { getCollections, getProductsInCollection } from "../../../lib/shopify";
 import { ShopifyProduct, PaginationInfo } from "../../../lib/types";
 import CollectionsSidebar from "../../../components/shop/CollectionsSidebar";
 import ProductGrid from "../../../components/shop/ProductGrid";
@@ -31,58 +31,15 @@ async function fetchData() {
 	};
 
 	try {
-		const allProducts = await shopifyClient.product.fetchAll(pageSize);
-
-		interface RawShopifyImage {
-			id: string;
-			src: string;
-			altText: string | null;
+		// Get products from the first collection if available, or return empty array
+		if (collections.length > 0) {
+			const result = await getProductsInCollection(
+				collections[0].handle,
+				pageSize,
+			);
+			products = result.products;
+			pageInfo = result.pageInfo;
 		}
-
-		interface RawShopifyVariant {
-			id: string;
-			title: string;
-			price: {
-				amount: string;
-			};
-			availableForSale: boolean;
-		}
-
-		interface RawShopifyProduct {
-			id: string;
-			title: string;
-			handle: string;
-			description: string;
-			descriptionHtml: string;
-			images: RawShopifyImage[];
-			variants: RawShopifyVariant[];
-		}
-
-		products = (allProducts as unknown as RawShopifyProduct[]).map((product) => ({
-			id: product.id,
-			title: product.title,
-			handle: product.handle,
-			description: product.description || "",
-			descriptionHtml: product.descriptionHtml || "",
-			images: product.images.map((image) => ({
-				id: image.id || "",
-				src: image.src,
-				altText: image.altText || null,
-			})),
-			variants: product.variants.map((variant) => ({
-				id: variant.id,
-				title: variant.title,
-				price: variant.price?.amount || "0",
-				available: variant.availableForSale || false,
-			})),
-		}));
-
-		pageInfo = {
-			hasNextPage: products.length === pageSize,
-			hasPreviousPage: false,
-			startCursor: "",
-			endCursor: "",
-		};
 	} catch (error) {
 		console.error("Error fetching all products:", error);
 	}

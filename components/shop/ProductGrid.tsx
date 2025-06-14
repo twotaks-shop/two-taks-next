@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ShopifyProduct, PaginationInfo } from "../../lib/types";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";

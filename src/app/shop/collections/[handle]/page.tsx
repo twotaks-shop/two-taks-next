@@ -43,10 +43,8 @@ export async function generateMetadata({
 }
 
 async function fetchData(handle: string, cursor: string | null) {
-	// Get all collections for the sidebar
 	const collections = await getCollections();
 
-	// Get the current collection
 	const collection = await getCollection(handle);
 
 	if (!collection) {
@@ -66,7 +64,7 @@ async function fetchData(handle: string, cursor: string | null) {
 	const pageSize = 12;
 
 	const { products, pageInfo } = await getProductsInCollection(
-		collection.id,
+		handle,
 		pageSize,
 		cursor,
 	);
