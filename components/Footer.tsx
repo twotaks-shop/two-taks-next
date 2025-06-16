@@ -18,7 +18,7 @@ export default function Footer({ className = "" }: { className?: string }) {
 
 						<div className="flex flex-col sm:flex-row gap-4">
 							<Link
-								href="/contact"
+								href="mailto:info@twotaks.com"
 								className="flex items-center justify-center space-x-2 px-5 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-300"
 							>
 								<span>Email</span>
@@ -38,7 +38,7 @@ export default function Footer({ className = "" }: { className?: string }) {
 							</Link>
 
 							<Link
-								href="/contact"
+								href="tel:%20+1%20305%20399%209294%20"
 								className="flex items-center justify-center space-x-2 px-5 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors duration-300"
 							>
 								<span>Call us</span>
@@ -61,7 +61,7 @@ export default function Footer({ className = "" }: { className?: string }) {
 					<div className="flex flex-row md:flex-col justify-between w-full md:w-auto md:items-end md:space-y-4">
 						<div className="flex space-x-6 md:space-x-4">
 							<Link
-								href="https://instagram.com"
+								href="https://www.instagram.com/twotaks_?igsh=MWJ1YjUwMXV5NTl3Yg=="
 								aria-label="Instagram"
 								className="hover:opacity-80 transition-opacity"
 							>
@@ -76,7 +76,7 @@ export default function Footer({ className = "" }: { className?: string }) {
 							</Link>
 
 							<Link
-								href="https://tiktok.com"
+								href="https://www.tiktok.com/@twotaks_?_t=ZS-8vwn4D8FfZ2&_r=1"
 								aria-label="TikTok"
 								className="hover:opacity-80 transition-opacity"
 							>
@@ -108,7 +108,7 @@ export default function Footer({ className = "" }: { className?: string }) {
 				<div className="flex flex-col sm:flex-row justify-between items-center">
 					<div className="flex space-x-6 mb-4 sm:mb-0">
 						<Link
-							href="/privacy-policy"
+							href="/privacy"
 							className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
 						>
 							Privacy Policy

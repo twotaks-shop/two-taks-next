@@ -77,22 +77,28 @@ export default function Ingredients({
 
 			<div className="relative z-10 max-w-3xl mx-auto text-center">
 				<h2 className="text-3xl sm:text-4xl lg:text-5xl font-brand font-bold mb-4 tracking-tight text-gray-900">
-					Discover the Power of Our Natural Ingredients
+					The Science of Feeling Superhuman
 				</h2>
 
 				<p className="text-xl sm:text-2xl font-brand font-medium text-gray-700 mb-6">
-					Science-backed. Nature-inspired.
+					Backed by nature. Verified by science. Built for unstoppable humans.
 				</p>
 
 				<p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-					Our formulas are crafted with precision—using the best of what nature
-					offers and science confirms. Each ingredient is selected not just for its
-					individual benefits, but for how it synergizes with others to help your
-					body perform at its best.
+						At Twotaks, every ingredient is hand-picked to deliver real, measurable impact.
+	We don&apos;t just throw powerful extracts into a capsule — we design formulas where each component works better together.
+				</p>
+				<ul className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto  pl-6 list-none">
+					<li>•⁠ Adaptogens like Rhodiola and Cordyceps</li>
+					<li>•⁠ Focus boosters like TeaCrine and Alpha GPC</li>
+					<li>•⁠ Cellular protectors like Astaxanthin and PQQ</li>
+				</ul>
+				<p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+					This synergy is what makes our supplements next-level. You&apos;ll feel the difference.
 				</p>
 
 				<button className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
-					LEARN MORE ABOUT OUR INGREDIENTS
+					Meet our ingredients
 				</button>
 			</div>
 		</section>

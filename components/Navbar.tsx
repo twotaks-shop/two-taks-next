@@ -108,7 +108,7 @@ function ProfileIcon() {
 				className={`flex items-center justify-center h-10 w-10 transition-colors duration-200 hover:bg-neutral-100 rounded-full ${
 					isAuthenticated() && customer ? "bg-neutral-100" : ""
 				}`}
-				aria-label={isAuthenticated() ? "Account menu" : "Sign in"}
+				aria-label="Account menu"
 			>
 				{isAuthenticated() && customer ? (
 					<div className="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-medium">

@@ -199,10 +199,3 @@ export const useCustomerStore = create<CustomerStore>()(
     }
   )
 );
-
-if (typeof window !== 'undefined') {
-  const store = useCustomerStore.getState();
-  if (store.isAuthenticated()) {
-    store.fetchCustomer();
-  }
-}

@@ -17,11 +17,24 @@ export default function ProductCard({ product }: ProductCardProps) {
 	// Get the first available variant
 	const variant = product.variants?.[0];
 	const price = variant?.price ? parseFloat(variant.price) : 0;
+	const compareAtPrice = variant?.compareAtPrice
+		? parseFloat(variant.compareAtPrice)
+		: 0;
+	const hasDiscount = compareAtPrice > 0 && compareAtPrice > price;
+
 	const formattedPrice = new Intl.NumberFormat("en-US", {
 		style: "currency",
 		currency: "USD",
 		minimumFractionDigits: 2,
 	}).format(price);
+
+	const formattedCompareAtPrice = hasDiscount
+		? new Intl.NumberFormat("en-US", {
+				style: "currency",
+				currency: "USD",
+				minimumFractionDigits: 2,
+			}).format(compareAtPrice)
+		: null;
 
 	const hasSubscription =
 		product.sellingPlanGroups && product.sellingPlanGroups.length > 0;
@@ -48,7 +61,19 @@ export default function ProductCard({ product }: ProductCardProps) {
 				</h3>
 
 				<div className="space-y-1">
-					<p className="text-md text-neutral-900">{formattedPrice}</p>
+					<div className="flex items-center space-x-2">
+						<p className="text-md text-neutral-900">{formattedPrice}</p>
+						{hasDiscount && (
+							<p className="text-sm text-neutral-500 line-through">
+								{formattedCompareAtPrice}
+							</p>
+						)}
+						{hasDiscount && (
+							<span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+								{Math.round((1 - price / compareAtPrice) * 100)}% OFF
+							</span>
+						)}
+					</div>
 					{hasSubscription && subscriptionDiscount && (
 						<div className="flex items-center space-x-2">
 							<span className="text-sm text-green-600 font-medium">

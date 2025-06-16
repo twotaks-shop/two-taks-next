@@ -6,7 +6,7 @@ const storefrontAccessToken =
 
 const STOREFRONT_API_URL = `https://${domain}/api/2025-01/graphql.json`;
 
-async function graphqlRequest(query: string, variables: any = {}) {
+export async function graphqlRequest(query: string, variables: any = {}) {
 	const response = await fetch(STOREFRONT_API_URL, {
 		method: "POST",
 		headers: {
@@ -703,6 +703,7 @@ export async function getProduct(
 				id: edge.node.id,
 				title: edge.node.title,
 				price: edge.node.price.amount,
+				compareAtPrice: edge.node.compareAtPrice?.amount,
 				available: edge.node.availableForSale,
 			})),
 			sellingPlanGroups:

@@ -233,14 +233,14 @@ export default function AccountPage() {
 							<h3 className="text-lg font-medium text-blue-900 mb-2">Need Help?</h3>
 							<p className="text-sm text-blue-700 mb-4">
 								If you need to update your account information or have questions about
-								your orders, we&aposre here to help.
+								your orders, we&apos;re here to help.
 							</p>
 							<div className="space-y-2">
 								<p className="text-sm text-blue-700">
-									<strong>Email:</strong> support@twotaks.com
+									<strong>Email:</strong> info@twotaks.com
 								</p>
 								<p className="text-sm text-blue-700">
-									<strong>Phone:</strong> 1-800-TWOTAKS
+									<strong>Phone:</strong> 1-305-399-9294
 								</p>
 							</div>
 						</div>

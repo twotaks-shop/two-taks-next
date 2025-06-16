@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface BenefitItemProps {
 	text: string;
@@ -64,21 +65,27 @@ export default function ProductShowcase({ className = "" }) {
 					<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50 opacity-20 pointer-events-none"></div>
 					<div className="w-full lg:w-5/12 xl:w-4/12 mb-16 lg:mb-0 text-center lg:text-left relative z-10">
 						<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-brand font-black tracking-tight text-gray-900 mb-6 leading-none">
-							Unlock Your Potential
+							Activate your potential
 						</h2>
 
 						<p className="text-lg md:text-xl text-gray-800 mb-6 font-medium max-w-2xl lg:max-w-none lg:mx-0 tracking-wide">
-							Premium wellness for peak performance
+							Live like a superhuman.
 						</p>
 
 						<p className="text-base text-gray-600 mb-8 max-w-2xl lg:max-w-none lg:mx-0 leading-relaxed">
-							Advanced formulas with adaptogens, antioxidants, and nootropics to
-							enhance focus, energy, and balance.
+							We design smart formulas to spark your energy, sharpen your focus, and
+							strengthen your body. Inspired by astronauts, elite athletes, and ancient
+							traditions, we blend top-tier ingredients to support you all day long —
+							naturally.
+						</p>
+
+						<p className="text-base text-gray-600 mb-8 max-w-2xl lg:max-w-none lg:mx-0 leading-relaxed">
+							No shortcuts. No crashes. Just real results you can feel.
 						</p>
 
 						<div className="mt-6 mb-8">
 							<h3 className="text-lg font-brand font-bold mb-4 tracking-wide lg:text-left">
-								What We Offer
+								The Fuel Behind the Formula (What’s Inside Matters)
 							</h3>
 							<div className="grid grid-cols-2 sm:grid-cols-2 gap-x-6 gap-y-1">
 								{benefits.map((benefit, index) => (
@@ -87,9 +94,12 @@ export default function ProductShowcase({ className = "" }) {
 							</div>
 						</div>
 
-						<button className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+						<Link
+							href="/shop/collections/all-products"
+							className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+						>
 							Try it now
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

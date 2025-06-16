@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs({ className = "" }: { className?: string }) {
 	return (
@@ -47,9 +48,9 @@ export default function AboutUs({ className = "" }: { className?: string }) {
 						</div>
 
 						<div className="mt-8">
-							<button className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+							<Link href="/about-us" className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
 								OUR STORY
-							</button>
+							</Link>
 						</div>
 					</div>
 				</div>

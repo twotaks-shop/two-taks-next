@@ -8,31 +8,31 @@ export const standardsData: StandardItem[] = [
 	{
 		id: "1",
 		title: "GMP Certified",
-		icon: "/standard/nw_ico_1.webp",
+		icon: "/standard/Iconos-01.png",
 	},
 	{
 		id: "2",
 		title: "100% Vegan",
-		icon: "/standard/nw_ico_2.webp",
+		icon: "/standard/Iconos-02.png",
 	},
 	{
 		id: "3",
 		title: "Lab Tested",
-		icon: "/standard/nw_ico_3.webp",
+		icon: "/standard/Iconos-03.png",
 	},
 	{
 		id: "4",
 		title: "Gluten-Free",
-		icon: "/standard/nw_ico_4.webp",
+		icon: "/standard/Iconos-04.png",
 	},
 	{
 		id: "5",
 		title: "GMO-Free",
-		icon: "/standard/nw_ico_5.webp",
+		icon: "/standard/Iconos-05.png",
 	},
 	{
 		id: "6",
 		title: "No Artificial Flavors",
-		icon: "/standard/nw_ico_6.webp",
+		icon: "/standard/Iconos-06.png",
 	},
 ];

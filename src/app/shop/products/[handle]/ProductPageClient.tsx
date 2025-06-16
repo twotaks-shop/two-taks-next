@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { getProduct } from "../../../../../lib/shopify";
+import { fetchRelatedProducts } from "../../../../../lib/fetch-related-products";
 import { ShopifyProduct } from "../../../../../lib/types";
 import ProductCard from "../../../../../components/shop/ProductCard";
 import SubscriptionOptions from "../../../../../components/customer/SubscriptionOptions";
@@ -19,9 +20,9 @@ async function fetchData(handle: string) {
 
 	let relatedProducts: ShopifyProduct[] = [];
 	try {
-		// For related products, we'll use a collection or just return empty for now
-		// You can replace this with a specific collection handle that contains related products
-		relatedProducts = [];
+		if (product) {
+			relatedProducts = await fetchRelatedProducts(product.id, 4);
+		}
 	} catch (error) {
 		console.error("Error fetching related products:", error);
 	}
@@ -127,11 +128,24 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 		: product.variants[0];
 
 	const price = activeVariant?.price ? parseFloat(activeVariant.price) : 0;
+	const compareAtPrice = activeVariant?.compareAtPrice
+		? parseFloat(activeVariant.compareAtPrice)
+		: 0;
+	const hasDiscount = compareAtPrice > 0 && compareAtPrice > price;
+
 	const formattedPrice = new Intl.NumberFormat("en-US", {
 		style: "currency",
 		currency: "USD",
 		minimumFractionDigits: 2,
 	}).format(price);
+
+	const formattedCompareAtPrice = hasDiscount
+		? new Intl.NumberFormat("en-US", {
+				style: "currency",
+				currency: "USD",
+				minimumFractionDigits: 2,
+			}).format(compareAtPrice)
+		: null;
 
 	const primaryImage = product.images[0];
 	const imageSrc = primaryImage?.url || PLACEHOLDER_IMAGE_URL;
@@ -239,7 +253,19 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 						{product.title}
 					</h1>
 
-					<div className="text-2xl mb-8 text-neutral-900">{formattedPrice}</div>
+					<div className="flex items-center mb-8">
+						<span className="text-2xl text-neutral-900">{formattedPrice}</span>
+						{hasDiscount && (
+							<>
+								<span className="ml-2 text-lg text-neutral-500 line-through">
+									{formattedCompareAtPrice}
+								</span>
+								<span className="ml-2 inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+									{Math.round((1 - price / compareAtPrice) * 100)}% OFF
+								</span>
+							</>
+						)}
+					</div>
 
 					{product.descriptionHtml && (
 						<div
@@ -316,7 +342,18 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 						</button>
 
 						<div className="text-sm text-neutral-500 space-y-2">
-							<p>• Secure checkout</p>
+							
+							<div className="flex items-center text-sm text-gray-700 space-x-1 mt-2">
+								<Image
+									src="/klarna.png"
+									alt="Klarna"
+									className="w-12"
+									width={100}
+									height={100}
+								/>
+								<span>Pay in 4 interest-free installments</span>
+							</div>
+							<p>Secure checkout</p>
 							{selectedSubscription && <p>• Cancel or modify subscription anytime</p>}
 						</div>
 					</div>

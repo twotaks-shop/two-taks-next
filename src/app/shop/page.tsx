@@ -31,7 +31,6 @@ async function fetchData() {
 	};
 
 	try {
-		// Get products from the first collection if available, or return empty array
 		if (collections.length > 0) {
 			const result = await getProductsInCollection(
 				collections[0].handle,

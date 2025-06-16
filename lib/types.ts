@@ -14,6 +14,7 @@ export interface ShopifyProduct {
 		id: string;
 		title: string;
 		price: string;
+		compareAtPrice?: string;
 		available: boolean;
 	}>;
 	sellingPlanGroups?: Array<{

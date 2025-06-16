@@ -20,20 +20,6 @@ export default function CollectionsSidebar({
 				</h2>
 
 				<ul className="space-y-2">
-					<li>
-						<Link
-							href="/shop"
-							className={`block py-3 px-4
-							 transition-all duration-200 font-heading-regular ${
-									!activeCollection
-										? "bg-black text-white"
-										: "text-neutral-700 hover:bg-neutral-100"
-								}`}
-						>
-							All Products
-						</Link>
-					</li>
-
 					{collections.map((collection) => (
 						<li key={collection.id}>
 							<Link
