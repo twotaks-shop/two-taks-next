@@ -59,10 +59,14 @@ export function Standards() {
 
 				<div className="mt-16 text-center">
 					<h3 className="text-2xl md:text-3xl font-heading-bold mb-4">
-						Learn More About Our Process
+						How We Build Superhuman Quality
 					</h3>
 					<p className="text-gray-600 max-w-2xl mx-auto mb-6">
-						Watch these videos to discover how we create our high-quality products
+						Inside every capsule: science, care, and clean power.
+					</p>
+					<p className="text-gray-600 max-w-2xl mx-auto mb-6">
+						Go behind the scenes to discover how we guarantee the quality of every
+						product—from rigorous testing to the premium ingredients we choose.
 					</p>
 
 					<div className="mt-8">
@@ -87,10 +91,11 @@ export function Standards() {
 								</div>
 								<div className="p-4 bg-white">
 									<h3 className="text-xl font-semibold text-gray-900">
-										Manufacturing Process
+										Quality Control Process
 									</h3>
 									<p className="text-gray-600 mt-2">
-										See how our products are crafted with precision and care
+										Discover how we ensure every capsule meets the highest standards—safe,
+										effective, and consistent.
 									</p>
 								</div>
 							</div>
@@ -115,10 +120,11 @@ export function Standards() {
 								</div>
 								<div className="p-4 bg-white">
 									<h3 className="text-xl font-semibold text-gray-900">
-										Quality Ingredients
+										Premium Ingredients
 									</h3>
 									<p className="text-gray-600 mt-2">
-										Discover the premium ingredients that make our products exceptional
+										Take a closer look at the ingredients behind our formulas—and why only
+										the best make it into your routine.
 									</p>
 								</div>
 							</div>
