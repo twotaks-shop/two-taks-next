@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, use } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { getBlogArticle, ShopifyArticle } from "../../../../lib/shopify-blog";
 import MainContentWrapper from "../../../../components/MainContentWrapper";
