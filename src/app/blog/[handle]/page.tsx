@@ -86,7 +86,7 @@ export default function BlogArticlePage({ params }: PageParams) {
 
 	return (
 		<MainContentWrapper>
-			<article className="max-w-screen-xl mx-auto px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:pt-28 lg:pb-16">
+			<article className="max-w-screen-xl mt-8 mx-auto px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:pt-28 lg:pb-16">
 				{/* Breadcrumbs */}
 				<nav className="mb-8 text-sm">
 					<ol className="flex items-center space-x-2">
@@ -125,7 +125,7 @@ export default function BlogArticlePage({ params }: PageParams) {
 						{article.author?.name && (
 							<>
 								<span className="mx-3">•</span>
-								<span>{article.author.name}</span>
+								<span>Twotaks</span>
 							</>
 						)}
 					</div>
@@ -142,24 +142,15 @@ export default function BlogArticlePage({ params }: PageParams) {
 							))}
 						</div>
 					)}
-
-					{article.image && (
-						<div className="relative w-full h-72 sm:h-96 lg:h-[32rem] rounded-lg overflow-hidden mb-8">
-							<Image
-								src={article.image.url}
-								alt={article.image.altText || article.title}
-								fill
-								className="object-cover"
-								priority
-							/>
-						</div>
-					)}
 				</header>
 
 				{/* Article Content */}
 				<div className="prose prose-lg max-w-none">
 					{article.contentHtml ? (
-						<div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
+						<div
+							id="blog"
+							dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+						/>
 					) : (
 						<p className="text-gray-600 whitespace-pre-line">{article.content}</p>
 					)}

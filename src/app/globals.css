@@ -48,3 +48,44 @@ body {
 .navbar-submenu-item:hover {
 	transform: translateX(6px);
 }
+
+#blog {
+	@apply flex flex-col flex-wrap max-w-[800px] mx-auto;
+
+	h2 {
+		@apply text-3xl font-semibold mb-4 text-gray-800;
+	}
+
+	h3 {
+		@apply text-2xl font-semibold mb-4 text-gray-800;
+	}
+
+	p {
+		@apply text-lg leading-relaxed mb-6 text-gray-700;
+	}
+
+	img {
+		@apply block mx-auto my-8 w-full max-w-full md:max-w-[400px] lg:max-w-[500px] h-auto rounded;
+	}
+
+	a {
+		@apply text-blue-600 hover:text-blue-800 underline;
+	}
+
+	ul,
+	ol {
+		@apply mb-6 pl-6;
+	}
+
+	li {
+		@apply mb-2 text-lg leading-relaxed text-gray-700;
+	}
+
+	blockquote {
+		@apply pl-4 border-l-4 border-gray-300 italic my-6 text-gray-600;
+	}
+
+	span {
+		@apply text-lg;
+	}
+}

@@ -121,7 +121,7 @@ export default function BlogPage() {
 													<div className="flex-grow">
 														<p className="text-sm text-gray-500 mb-2">
 															{formatDate(article.publishedAt)}
-															{article.author?.name && ` • ${article.author.name}`}
+															{article.author?.name && ` • Twotaks `}
 														</p>
 
 														<Link href={`/blog/${article.handle}`} className="block">
