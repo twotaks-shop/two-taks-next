@@ -46,7 +46,9 @@ const accountNavItems = [
 		),
 	},
 	{
-		href: "https://shopify.com/76742426880/account/pages/6971b1a1-27f6-4c27-b8b0-3009fd3b921d",
+		href:
+			"https://shopify.com/76742426880/account/pages/6971b1a1-27f6-4c27-b8b0-3009fd3b921d",
+		external: true,
 		label: "Subscriptions",
 		icon: (
 			<svg
@@ -165,6 +167,23 @@ export default function AccountLayout({
 							<nav className="space-y-1">
 								{accountNavItems.map((item) => {
 									const isActive = pathname === item.href;
+
+									if (item?.external)
+										return (
+											<a
+												key={item.href}
+												href={item.href}
+												className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+													isActive
+														? "bg-neutral-100 text-neutral-900"
+														: "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
+												}`}
+											>
+												{item.icon}
+												<span className="ml-3">{item.label}</span>
+											</a>
+										);
+
 									return (
 										<Link
 											key={item.href}
