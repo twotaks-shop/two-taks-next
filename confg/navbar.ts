@@ -8,7 +8,7 @@ export const navbarConfig: NavbarItems = [
 	},
 	{
 		label: "Ingredients",
-		href: "/rest-recovery",
+		href: "/ingredients",
 		hasSubmenu: false,
 	},
 	{

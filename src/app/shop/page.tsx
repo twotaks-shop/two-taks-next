@@ -58,9 +58,9 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 	const currentPage = isNaN(page) ? 1 : page;
 
 	return (
-		<main className="container mx-auto px-6 pt-32 pb-24">
+		<main className="container mx-auto px-6 pt-32 pb-24 mt-4">
 			<div className="text-center mb-16">
-				<h1 className="text-4xl md:text-5xl font-heading-medium mb-4 text-neutral-900">
+				<h1 className="text-4xl md:text-5xl font-heading-bold mb-4 text-neutral-900">
 					Shop
 				</h1>
 				<p className="text-lg text-neutral-600 max-w-2xl mx-auto">

@@ -52,7 +52,7 @@ export default function ProductGrid({
 		<div className="w-full">
 			{title && (
 				<div className="mb-8">
-					<h2 className="text-2xl font-heading-medium text-neutral-900 mb-2">
+					<h2 className="text-2xl font-heading-bold text-neutral-900 mb-2">
 						{title}
 					</h2>
 					<p className="text-neutral-600">

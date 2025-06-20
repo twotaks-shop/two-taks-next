@@ -56,7 +56,7 @@ export default function BlogPage() {
 
 	return (
 		<MainContentWrapper>
-			<div className="max-w-screen-xl mx-auto mt-10  px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:pt-28 lg:pb-16">
+			<div className="max-w-screen-xl mx-auto mt-4  px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:pt-28 lg:pb-16">
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
 						Our Blog
