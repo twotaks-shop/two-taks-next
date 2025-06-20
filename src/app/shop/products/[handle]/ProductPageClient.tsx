@@ -351,6 +351,20 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 									width={100}
 									height={100}
 								/>
+								<Image
+									src="/shop.png"
+									alt="Shop"
+									className="w-12"
+									width={100}
+									height={100}
+								/>
+								<Image
+									src="/afterpay.png"
+									alt="afterpay"
+									className="w-12"
+									width={100}
+									height={100}
+								/>
 								<span>Pay in 4 interest-free installments</span>
 							</div>
 							<p>Secure checkout</p>

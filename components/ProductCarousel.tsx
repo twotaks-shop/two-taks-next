@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { productCarouselConfig } from "../confg/productCarousel";
+import Link from "next/link";
 
 export interface Product {
 	id: string;
@@ -12,7 +13,6 @@ export interface Product {
 	imageUrl: string;
 	category: string;
 	productUrl: string;
-	ingredients: string[];
 }
 
 export function ProductCarousel({
@@ -158,25 +158,13 @@ export function ProductCarousel({
 					</div>
 
 					<div className="mt-4 md:mt-6">
-						<div className="mb-4">
-							<p className="text-sm font-medium text-gray-700 mb-2 lg:text-left text-center">
-								Ingredients:
-							</p>
-							<div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-								{products[activeIndex].ingredients.map((ingredient, idx) => (
-									<span
-										key={idx}
-										className="px-3 py-1 text-xs rounded-full text-gray-700 border border-gray-200"
-									>
-										{ingredient}
-									</span>
-								))}
-							</div>
-						</div>
 						<div className="flex justify-center w-full lg:justify-start">
-							<button className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
+							<Link
+								href={products[activeIndex].productUrl}
+								className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200"
+							>
 								Experience
-							</button>
+							</Link>
 						</div>
 					</div>
 				</div>
