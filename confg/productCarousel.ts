@@ -3,7 +3,7 @@ export const productCarouselConfig = [
 		id: "4",
 		name: "Super Morning",
 		description:
-			"Kickstart your day with our ultimate morning pill:ignite your energy, shield your skin from UV rays, and conquer the day with unparalleled drive. Ditch the energy drinks-this is your shortcut to peak performance, boundless stamina, and stress-free, exhilarating starts to every day.",
+			"Start strong, stay unstoppable.\n\nPower up your body and mind early with clean, crash-free energy.\n\n Forget coffee and energy drinks — this capsule is your new morning ritual.\n\nFuel the kind of energy that keeps high-performers in motion.\n\nCordyceps, TeaCrine, Ginseng, and more.",
 		imageUrl: "/carousel/Morning.webp",
 		category: "Morning",
 		productUrl: "shop/products/super-morning",
@@ -13,7 +13,7 @@ export const productCarouselConfig = [
 		name: "Super Immune",
 		imageUrl: "/carousel/Immune.webp",
 		description:
-			"Step into any crowd with Super Immune and stay shielded from illness. Harness the extraordinary power of nature’s most potent plants to fortify your defenses and enjoy unparalleled health. With Super Immune, you’re not just protected-you’re empowered to thrive in any environment.",
+			"Boost your defenses, stay at your best.\n\nSay goodbye to colds and stay on track with real immune support.\n\nA strong immune system is your best investment in daily wellness.\n\nBecause thriving—not just surviving—should be your default setting.\n\nVitamin D, antioxidants, adaptogens, and more.",
 		category: "Immune",
 		productUrl: "shop/products/super-immune",
 	},
@@ -22,7 +22,7 @@ export const productCarouselConfig = [
 		name: "Super Sleep",
 		imageUrl: "/carousel/Sleep.webp",
 		description:
-			"Achieve deep, rejuvenating sleep with our powerful pill: unwind effortlessly, rediscover your dreams, and wake up feeling revitalized. Infused with proven, ancient ingredients for quicker, more effective relaxation.",
+			"Sleep deep. Wake up unstoppable.\n\nUnwind with ease, sleep better, and wake up recharged.\n\nNaturally improve your sleep quality and feel renewed every morning.\n\nBecause true strength begins with real rest.\n\nChamomile, Ashwagandha, 5-HTP, and more.",
 		category: "Sleep",
 		productUrl: "shop/products/super-sleep",
 	},
@@ -31,7 +31,7 @@ export const productCarouselConfig = [
 		name: "Super Brain",
 		imageUrl: "/carousel/Brain.webp",
 		description:
-			"Imagine stepping into a meeting, fully in control and outshining the competition. Super Brain ensures you stay alert and focused, enhances your mental clarity, and speeds up your learning. Embrace the confidence and cognitive agility that keep you on top of the game and drive your success to new heights.",
+			"Sharper focus, stronger memory, better performance.\n\nLearn faster, think clearer, and make confident decisions.\n\nYour go-to supplement for focus, productivity, and cognitive support.\n\nMental clarity is your next-level power move.\n\nAlpha GPC, Lion’s Mane, Bacopa, and more.",
 		category: "Brain",
 		productUrl: "shop/products/super-brain",
 	},
@@ -40,7 +40,7 @@ export const productCarouselConfig = [
 		name: "Super Bundle",
 		imageUrl: "/carousel/Bundle.webp",
 		description:
-			"Super Bundle combines the power of Super Immune, Super Morning, Super Sleep, and Super Brain into one convenient package. Enjoy the benefits of all four products in one easy-to-use formula.",
+			"Not just a bundle. It’s your daily upgrade kit. Unbox the essentials to activate your mind, body, and immunity.\n\nSuper Morning: Clean energy that lasts\n\nSuper Immune: Defense when you need it\n\nSuper Sleep: Deep rest, real recovery\n\nAll three formulas work in synergy to help you feel unstoppable — from sunrise to shuteye.\n\nLimited-time offer",
 		category: "Bundle",
 		productUrl: "shop/products/super-bundle",
 	},

@@ -78,10 +78,10 @@ export function ProductCarousel({
 		>
 			<div className="text-center mb-8 max-w-3xl mx-auto">
 				<h2 className="text-3xl sm:text-4xl font-brand font-bold mb-4 tracking-tight text-gray-900">
-					Take a pick & enjoy!
+					Choose Your Formula. Unlock It All.
 				</h2>
 				<p className="text-base sm:text-lg text-gray-600">
-					Find your daily balance supplement and explore all products.
+					Find the perfect supplement to balance your day — with a sharp mind, strong body, and clean energy.
 				</p>
 			</div>
 
@@ -151,7 +151,7 @@ export function ProductCarousel({
 
 					<div className="w-full mt-4">
 						<div className="flex flex-col justify-center lg:justify-start">
-							<p className="text-brand text-sm text-center max-w-[65ch] text-balance font-normal leading-7 sm:text-base md:text-base lg:text-lg xl:text-xl sm:max-w-[70ch] md:max-w-[75ch] lg:max-w-full lg:text-left text-gray-500">
+							<p className="text-brand text-sm text-center max-w-[65ch] text-balance font-normal leading-7 sm:text-base md:text-base lg:text-lg xl:text-xl sm:max-w-[70ch] md:max-w-[75ch] lg:max-w-full lg:text-left text-gray-500 whitespace-pre-line">
 								{products[activeIndex].description}
 							</p>
 						</div>
