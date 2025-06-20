@@ -210,7 +210,7 @@ export const tabs = [
 				name: "Bacopa Extract (Bacopa monnieri)",
 				description:
 					"Used for centuries to support cognitive function, Bacopa enhances memory, reduces anxiety, and improves learning ability. Perfect for students, creatives, and curious minds.",
-				image: "/ingredients-page/Bacopa Extract Ingredients.webp",
+				image: "/ingredients-page/chamomile.webp",
 				category: "Super Brain",
 			},
 			{

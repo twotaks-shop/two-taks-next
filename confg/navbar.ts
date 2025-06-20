@@ -21,4 +21,9 @@ export const navbarConfig: NavbarItems = [
 		href: "/about-us",
 		hasSubmenu: false,
 	},
+	{
+		label: "Contact Us",
+		href: "/contact-us",
+		hasSubmenu: false,
+	},
 ];

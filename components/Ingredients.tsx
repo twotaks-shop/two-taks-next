@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Ingredients({
 	className = "",
@@ -97,9 +98,9 @@ export default function Ingredients({
 					This synergy is what makes our supplements next-level. You&apos;ll feel the difference.
 				</p>
 
-				<button className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
+				<Link href="/ingredients" className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
 					Meet our ingredients
-				</button>
+				</Link>
 			</div>
 		</section>
 	);
