@@ -211,7 +211,7 @@ export default function LoginForm({
 			{onSwitchToRegister && (
 				<div className="mt-6 text-center">
 					<p className="text-neutral-600">
-						Don&apost have an account?{" "}
+						Don&apos;t have an account?{" "}
 						<button
 							onClick={onSwitchToRegister}
 							className="text-black font-medium hover:underline transition-all duration-200"
