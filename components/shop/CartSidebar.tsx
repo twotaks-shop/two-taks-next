@@ -201,8 +201,7 @@ export default function CartSidebar() {
 										clearCart();
 
 										window.location.href = checkoutUrl;
-									} catch (error) {
-										console.error("Checkout error:", error);
+									} catch {
 										alert(
 											"Sorry, there was an error processing your checkout. Please try again.",
 										);

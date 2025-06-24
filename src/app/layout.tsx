@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import CartSidebar from "../../components/shop/CartSidebar";
 import MainContentWrapper from "../../components/MainContentWrapper";
 import AuthModalWrapper from "../../components/customer/AuthModalWrapper";
+import Script from "next/script";
 
 const leagueSpartan = League_Spartan({
 	variable: "--font-league-spartan",
@@ -45,6 +46,30 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+		 <Script
+          id="refersion-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(e, n, t, i, o, c, s, a) {
+                e.TrackingSystemObject = "r";
+                (s = n.createElement(t)).async = 1;
+                s.src = "https://cdn.refersion.com/refersion.js";
+                s.onload = function() {
+                  r.pubKey = "${process.env.NEXT_PUBLIC_REFERSION_API_KEY}";
+                  r.settings.fp_off = true;
+                  r.initializeXDLS().then(() => {
+                    r.launchDefault().then(() => {
+                      const rfsnTrackingEvent = new Event("refersion-loaded");
+                      document.dispatchEvent(rfsnTrackingEvent);
+                    })
+                  })
+                };
+                (a = n.getElementsByTagName(t)[0]).parentNode.insertBefore(s, a);
+              })(window, document, "script");
+            `
+          }}
+        />
 			<body
 				className={`${montserrat.variable} ${leagueSpartan.variable} antialiased`}
 			>

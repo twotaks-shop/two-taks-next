@@ -133,8 +133,7 @@ export async function getBlogs(): Promise<ShopifyBlog[]> {
 	try {
 		const response = await graphqlRequest(BLOGS_QUERY);
 		return response.blogs.edges.map((edge: any) => edge.node);
-	} catch (error) {
-		console.error("Error fetching blogs:", error);
+	} catch {
 		return [];
 	}
 }
@@ -165,8 +164,7 @@ export async function getBlogArticles(
 			pageInfo: blog.articles.pageInfo,
 			articles: blog.articles.edges.map((edge: any) => edge.node),
 		};
-	} catch (error) {
-		console.error("Error fetching blog articles:", error);
+	} catch {
 		return {
 			pageInfo: {
 				hasNextPage: false,
@@ -195,8 +193,7 @@ export async function getBlogArticle(
 
 		const response = await graphqlRequest(BLOG_ARTICLE_QUERY, variables);
 		return response.blog.articleByHandle;
-	} catch (error) {
-		console.error("Error fetching blog article:", error);
+	} catch {
 		return null;
 	}
 }

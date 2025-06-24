@@ -42,8 +42,7 @@ export async function graphqlRequest(query: string, variables = {}) {
 		}
 
 		return responseBody.data;
-	} catch (error) {
-		console.error("Error making GraphQL request:", error);
-		throw error;
+	} catch {
+		console.error("Something wrong happened.")
 	}
 }

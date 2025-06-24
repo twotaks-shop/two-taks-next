@@ -142,10 +142,9 @@ export const useCustomerStore = create<CustomerStore>()(
             // Token might be invalid, logout
             await get().logout();
           }
-        } catch (error) {
-          console.error('Error fetching customer:', error);
+        } catch () {
           set({ isLoading: false });
-          // Don't logout on fetch error, might be network issue
+
         }
       },
 
@@ -163,8 +162,7 @@ export const useCustomerStore = create<CustomerStore>()(
           }
 
           return false;
-        } catch (error) {
-          console.error('Error renewing token:', error);
+        } catch {
           return false;
         }
       },

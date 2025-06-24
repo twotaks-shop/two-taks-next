@@ -1,3 +1,5 @@
+import { RefersionUtils } from "./refersion";
+
 const domain =
 	process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN || "your-store.myshopify.com";
 const storefrontAccessToken =
@@ -562,8 +564,7 @@ export async function getCollections(): Promise<ShopifyCollection[]> {
 					}
 				: null,
 		}));
-	} catch (error) {
-		console.error("Error fetching collections:", error);
+	} catch {
 		return [];
 	}
 }
@@ -589,8 +590,7 @@ export async function getCollection(
 					}
 				: null,
 		};
-	} catch (error) {
-		console.error(`Error fetching collection with handle ${handle}:`, error);
+	} catch {
 		return null;
 	}
 }
@@ -665,8 +665,7 @@ export async function getProductsInCollection(
 			products,
 			pageInfo: data.collection.products.pageInfo,
 		};
-	} catch (error) {
-		console.error(`Error fetching products for collection ${handle}:`, error);
+	} catch {
 		return {
 			products: [],
 			pageInfo: {
@@ -726,8 +725,7 @@ export async function getProduct(
 					})),
 				})) || [],
 		};
-	} catch (error) {
-		console.error(`Error fetching product with handle ${handle}:`, error);
+	} catch {
 		return null;
 	}
 }
@@ -749,11 +747,18 @@ export async function createCheckout(
 		if (data.cartCreate.userErrors.length > 0) {
 			throw new Error(data.cartCreate.userErrors[0].message);
 		}
+		const checkoutUrl = data.cartCreate.cart.checkoutUrl;
+  const parsedUrl = new URL(checkoutUrl);
+  
+  parsedUrl.searchParams.delete("key");
 
-		return data.cartCreate.cart.checkoutUrl;
-	} catch (error) {
-		console.error("Error creating checkout:", error);
-		throw error;
+  const checkoutToken = parsedUrl.toString().split("/").pop();
+  	
+  RefersionUtils.sendCheckoutEvent(checkoutToken!)
+  
+		return checkoutUrl
+	} catch {
+		console.error("Something wrong happened")
 	}
 }
 
@@ -774,7 +779,6 @@ export async function createCustomer(input: CustomerCreateInput): Promise<{
 			customer: data.customerCreate.customer,
 		};
 	} catch (error) {
-		console.error("Error creating customer:", error);
 		throw error;
 	}
 }
@@ -798,7 +802,6 @@ export async function customerLogin(input: CustomerLoginInput): Promise<{
 			accessToken: data.customerAccessTokenCreate.customerAccessToken,
 		};
 	} catch (error) {
-		console.error("Error logging in customer:", error);
 		throw error;
 	}
 }
@@ -811,8 +814,7 @@ export async function customerLogout(
 			customerAccessToken,
 		});
 		return true;
-	} catch (error) {
-		console.error("Error logging out customer:", error);
+	} catch {
 		return false;
 	}
 }
@@ -838,7 +840,6 @@ export async function renewCustomerAccessToken(
 			accessToken: data.customerAccessTokenRenew.customerAccessToken,
 		};
 	} catch (error) {
-		console.error("Error renewing customer access token:", error);
 		throw error;
 	}
 }
@@ -857,8 +858,7 @@ export async function getCustomer(
 			...data.customer,
 			addresses: data.customer.addresses.edges.map((edge: any) => edge.node),
 		};
-	} catch (error) {
-		console.error("Error fetching customer:", error);
+	} catch {
 		return null;
 	}
 }
@@ -910,8 +910,7 @@ export async function getCustomerOrders(
 			orders,
 			pageInfo: data.customer.orders.pageInfo,
 		};
-	} catch (error) {
-		console.error("Error fetching customer orders:", error);
+	} catch {
 		return {
 			orders: [],
 			pageInfo: {

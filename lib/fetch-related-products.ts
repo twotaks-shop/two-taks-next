@@ -155,8 +155,7 @@ export async function fetchRelatedProducts(
 
     // Limit to requested number of products
     return relatedProducts.slice(0, limit);
-  } catch (error) {
-    console.error(`Error fetching related products for ${productId}:`, error);
+  } catch {
     return [];
   }
 }
