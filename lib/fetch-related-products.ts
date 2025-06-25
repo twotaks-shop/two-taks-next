@@ -149,7 +149,7 @@ export async function fetchRelatedProducts(
     // Filter out the current product if requested
     if (excludeCurrentProduct) {
       relatedProducts = relatedProducts.filter(
-        (product) => product.id !== productId
+        (product: any) => product.id !== productId
       );
     }
 
