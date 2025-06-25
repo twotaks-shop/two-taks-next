@@ -92,11 +92,11 @@ export default function BlogPage() {
 									</div>
 								) : (
 									<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-										{articles.map((article) => (
+										{articles.map((article, index) => (
 											<article
 												key={article.id}
-												className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full transition-all duration-200 hover:shadow-md"
-											>
+												className={`bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full transition-all duration-200 hover:shadow-md 
+													${index === 0 ? 'md:col-span-2 lg:col-span-2' : ''}`}											>
 												<Link
 													href={`/blog/${article.handle}`}
 													className="block flex-shrink-0"
