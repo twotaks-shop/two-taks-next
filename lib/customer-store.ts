@@ -82,9 +82,24 @@ export const useCustomerStore = create<CustomerStore>()(
 					const result = await createCustomer(input);
 
 					if (result.errors && result.errors.length > 0) {
-						const errorMessage = result.errors.map((e) => e.message).join(", ");
-						set({ error: errorMessage, isLoading: false });
-						return { success: false, error: errorMessage };
+						const isVerificationMessage = result.errors.some(
+							(e) =>
+								e.code === "CUSTOMER_DISABLED" &&
+								e.message.includes(
+									"please click the link included to verify your email address",
+								),
+						);
+
+						if (isVerificationMessage) {
+							set({ isLoading: false });
+							return {
+								success: true,
+								error: result.errors[0].message, 
+							};
+						}
+
+						set({ error: "Something went wrong. Please try again later.", isLoading: false });
+						return { success: false, error: "Something went wrong. Please try again later." };
 					}
 
 					if (result.customer) {
@@ -98,9 +113,8 @@ export const useCustomerStore = create<CustomerStore>()(
 
 					set({ error: "Failed to create account", isLoading: false });
 					return { success: false, error: "Failed to create account" };
-				} catch (error) {
-					const errorMessage =
-						error instanceof Error ? error.message : "Registration failed";
+				} catch {
+					const errorMessage = "Registration failed";
 					set({ error: errorMessage, isLoading: false });
 					return { success: false, error: errorMessage };
 				}
