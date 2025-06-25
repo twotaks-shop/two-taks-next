@@ -165,7 +165,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 		const imageUrl = primaryImage?.url || PLACEHOLDER_IMAGE_URL;
 
 		let finalPrice = price;
-		let sellingPlanName = undefined;
+		let sellingPlanName: string | undefined = undefined;
 		let isSubscription = false;
 
 		if (selectedSubscription && product.sellingPlanGroups) {
@@ -181,6 +181,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					finalPrice =
 						price - parseFloat(adjustment.adjustmentValue.fixedAmount.amount);
 				}
+				
 				sellingPlanName = sellingPlan.name;
 				isSubscription = true;
 			}
