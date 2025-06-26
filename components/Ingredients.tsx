@@ -9,12 +9,12 @@ export default function Ingredients({
 	className?: string;
 }) {
 	const ingredientImages = [
-		"/ingredients/Coenzima-Q-10.png",
-		"/ingredients/Extracto-de-Rhodiola.png",
-		"/ingredients/Hongo-Reishi.png",
-		"/ingredients/Mask-group.png",
-		"/ingredients/nw_Extracto-de-Bacopa.webp",
-		"/ingredients/nw_Glicinato-de-Magnesio.webp",
+		"/ingredients-page/Super Immune/Vitamin D.avif",
+		"/ingredients-page/Super Morning/Astaxanthin.jpg",
+		"/ingredients-page/Super Morning/teacrine.jpg",
+		"/ingredients-page/Super Sleep/Vitamin-B6.jpg",
+		"/ingredients-page/Super Sleep/Passion Flower.jpg",
+		"/ingredients-page/Super Brain/Lion_s Mane Mushroom.jpg",
 	];
 
 	const fallbackImage = "/ingredients/ingredients_fallback.webp";
@@ -86,8 +86,9 @@ export default function Ingredients({
 				</p>
 
 				<p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-						At Twotaks, every ingredient is hand-picked to deliver real, measurable impact.
-	We don&apos;t just throw powerful extracts into a capsule — we design formulas where each component works better together.
+					At Twotaks, every ingredient is hand-picked to deliver real, measurable
+					impact. We don&apos;t just throw powerful extracts into a capsule — we
+					design formulas where each component works better together.
 				</p>
 				<ul className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto  pl-6 list-none">
 					<li>•⁠ Adaptogens like Rhodiola and Cordyceps</li>
@@ -95,10 +96,14 @@ export default function Ingredients({
 					<li>•⁠ Cellular protectors like Astaxanthin and PQQ</li>
 				</ul>
 				<p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-					This synergy is what makes our supplements next-level. You&apos;ll feel the difference.
+					This synergy is what makes our supplements next-level. You&apos;ll feel the
+					difference.
 				</p>
 
-				<Link href="/ingredients" className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200">
+				<Link
+					href="/ingredients"
+					className="font-brand uppercase tracking-[0.25em] text-sm bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white py-3.5 px-10 cursor-pointer sm:py-3.5 sm:px-12 md:py-4 md:px-14 lg:py-4 lg:px-16 xl:py-4 xl:px-20 sm:text-sm lg:text-base transition-all duration-500 font-medium border border-gray-200"
+				>
 					Meet our ingredients
 				</Link>
 			</div>

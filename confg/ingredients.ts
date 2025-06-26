@@ -10,7 +10,7 @@ export const tabs = [
 				name: "Cordyceps Mushroom Extract",
 				description:
 					"Sourced from Cordyceps sinensis, a fungus that grows in the Tibetan and Nepalese highlands, this ancient adaptogen has been used in Traditional Chinese Medicine for centuries. It helps boost physical performance, increase stamina, and fight fatigue — delivering clean energy without synthetic stimulants.",
-				image: "/ingredients-page/hongo.png",
+				image: "/ingredients-page/Super Morning/Cordyceps Mushroom.jpg",
 				category: "Super Morning",
 			},
 			{
@@ -18,7 +18,7 @@ export const tabs = [
 				name: "Siberian Ginseng Extract",
 				description:
 					"Extracted from the root of Eleutherococcus senticosus, a plant native to Siberia. This powerful adaptogen helps your body cope with physical and mental stress, improves concentration, and keeps your energy steady throughout the day.",
-				image: "/ingredients-page/Extracto-de-Ginkgo.png",
+				image: "/ingredients-page/Super Morning/Siberian Ginseng.avif",
 				category: "Super Morning",
 			},
 			{
@@ -26,7 +26,7 @@ export const tabs = [
 				name: "Rhodiola Extract",
 				description:
 					"Derived from Rhodiola rosea, a root that thrives in the cold mountains of Europe and Asia. It reduces mental fatigue, enhances focus, and prepares you for demanding days. The perfect balance of clarity and calm — without burnout.",
-				image: "/ingredients-page/Extracto-de-Rhodiola.png",
+				image: "/ingredients-page/Super Morning/Rhodiola.jpg",
 				category: "Super Morning",
 			},
 			{
@@ -34,7 +34,7 @@ export const tabs = [
 				name: "Coenzyme Q10 (CoQ10)",
 				description:
 					"CoQ10 is a compound your body naturally produces, though levels drop with age. At Twotaks, we source it through natural fermentation to ensure high purity. It’s essential for mitochondrial energy production and delivers strong antioxidant protection.",
-				image: "/ingredients-page/Coenzima-Q-10.png",
+				image: "/ingredients-page/Super Morning/Coenzyme Q-10.avif",
 				category: "Super Morning",
 			},
 			{
@@ -42,7 +42,7 @@ export const tabs = [
 				name: "TeaCrine®️ (Theacrine)",
 				description:
 					"Extracted from Camellia assamica var. kucha, a tea plant traditionally used across Asia. TeaCrine provides smooth, long-lasting focus and energy — with no jitters, crashes, or caffeine comedowns.",
-				image: "/ingredients-page/teacrine.webp",
+				image: "/ingredients-page/Super Morning/teacrine.jpg",
 				category: "Super Morning",
 			},
 			{
@@ -50,7 +50,7 @@ export const tabs = [
 				name: "Pyrroloquinoline Quinone (PQQ)",
 				description:
 					"A micronutrient found in fermented foods like miso and veggies like green peppers, PQQ is obtained through advanced biotech processes. It stimulates the creation of new mitochondria and enhances cognitive function, memory, and mental clarity.",
-				image: "/ingredients-page/pqq.webp",
+				image: "/ingredients-page/Super Morning/PQQ.jpg",
 				category: "Super Morning",
 			},
 			{
@@ -58,7 +58,7 @@ export const tabs = [
 				name: "Astaxanthin (from Haematococcus pluvialis)",
 				description:
 					"Sourced from Haematococcus pluvialis, a freshwater microalga, Astaxanthin is one of nature’s most powerful antioxidants. It helps protect your skin from UV damage, supports eye health, and speeds up muscle recovery — your natural shield from the very first capsule.",
-				image: "/ingredients-page/Astaxantina.png",
+				image: "/ingredients-page/Super Morning/Astaxanthin.jpg",
 				category: "Super Morning",
 			},
 		],
@@ -74,7 +74,7 @@ export const tabs = [
 				name: "Vitamin C",
 				description:
 					"Vitamin C is a classic for a reason — it boosts your immune system, fights free radicals, and supports collagen production. We use a highly bioavailable form to ensure better absorption and deeper protection.",
-				image: "/ingredients-page/vitaminc.webp",
+				image: "/ingredients-page/Super Immune/Vitamin C.jpg",
 				category: "Super Immune",
 			},
 			{
@@ -82,7 +82,7 @@ export const tabs = [
 				name: "Vitamin D3 (as Cholecalciferol)",
 				description:
 					"Vitamin D3 activates your body’s natural defenses and helps regulate immune response. Since many people are deficient without knowing it, our formula ensures effective absorption and real support.",
-				image: "/ingredients-page/vitamind3.webp",
+				image: "/ingredients-page/Super Immune/Vitamin D.avif",
 				category: "Super Immune",
 			},
 			{
@@ -90,7 +90,7 @@ export const tabs = [
 				name: "Zinc (as Zinc Bisglycinate)",
 				description:
 					"Zinc helps your body fight off viruses and bacteria. We use zinc bisglycinate — a chelated form that’s gentler on the stomach and easier to absorb. Small but mighty.",
-				image: "/ingredients-page/Glicinato de Magnesio Ingredients.webp",
+				image: "/ingredients-page/Super Immune/Zinc.jpg",
 				category: "Super Immune",
 			},
 			{
@@ -98,7 +98,7 @@ export const tabs = [
 				name: "EpiCor®️ (Natural Yeast Extract from Dried Fermentate)",
 				description:
 					"EpiCor®️ comes from a natural yeast fermentation process and is clinically shown to improve gut health, reduce inflammation, and strengthen immune response. Your microbiome will thank you.",
-				image: "/ingredients-page/Epicor.png",
+				image: "/ingredients-page/Super Immune/Epicor.jpg",
 				category: "Super Immune",
 			},
 			{
@@ -106,7 +106,7 @@ export const tabs = [
 				name: "Yeast Beta Glucan",
 				description:
 					"Sourced from yeast cell walls, beta glucans stimulate macrophages and natural killer (NK) cells — key players in fast, effective immune defense. A quiet but powerful boost.",
-				image: "/ingredients-page/Beta-Glucano-de-Levadura.png",
+				image: "/ingredients-page/Super Immune/Beta Glucan.jpeg",
 				category: "Super Immune",
 			},
 			{
@@ -114,7 +114,7 @@ export const tabs = [
 				name: "Turmeric Extract (Curcumin)",
 				description:
 					"Turmeric’s active compound, curcumin, supports immune balance and reduces inflammation. We use a standardized extract for maximum potency and effectiveness.",
-				image: "/ingredients-page/Extracto-de-Curcuma.png",
+				image: "/ingredients-page/Super Immune/turmeric.jpg",
 				category: "Super Immune",
 			},
 			{
@@ -122,7 +122,7 @@ export const tabs = [
 				name: "Reishi Mushroom (Ganoderma lucidum)",
 				description:
 					"This time-honored adaptogenic mushroom helps modulate immune function, improve resilience, and promote full-body wellness. It calms what's overactive and strengthens what’s weak.",
-				image: "/ingredients-page/Hongo-Reishi.png",
+				image: "/ingredients-page/Super Immune/Reishi Mushroom.jpeg",
 				category: "Super Immune",
 			},
 			{
@@ -130,7 +130,7 @@ export const tabs = [
 				name: "Vitamin K2 (as Menaquinone-7)",
 				description:
 					"Vitamin K2 directs calcium where it belongs — your bones and teeth, not your arteries. It also works in synergy with Vitamin D3 to support a stronger, more balanced immune system.",
-				image: "/ingredients-page/k12.png",
+				image: "/ingredients-page/Super Immune/Vitamin k2.jpg",
 				category: "Super Immune",
 			},
 		],
@@ -146,7 +146,7 @@ export const tabs = [
 				name: "Vitamin B6 (Pyridoxine)",
 				description:
 					"Vitamin B6 is essential for producing serotonin and melatonin — two neurotransmitters that regulate sleep. Without it, your body doesn’t know when it’s time to rest.",
-				image: "/ingredients-page/vitaminb6.png",
+				image: "/ingredients-page/Super Sleep/Vitamin-B6.jpg",
 				category: "Super Sleep",
 			},
 			{
@@ -154,7 +154,7 @@ export const tabs = [
 				name: "Magnesium Glycinate",
 				description:
 					"This highly absorbable form of magnesium helps relax muscles and calm overactive thoughts. Perfect for those who feel physically tired but mentally wired at bedtime.",
-				image: "/ingredients-page/Glicinato de Magnesio Ingredients.webp",
+				image: "/ingredients-page/Super Sleep/Magnesium.jpg",
 				category: "Super Sleep",
 			},
 			{
@@ -162,7 +162,7 @@ export const tabs = [
 				name: "Passion Flower Extract",
 				description:
 					"Passion flower is a traditional herbal sedative that helps reduce anxiety, slow racing thoughts, and promote a sense of calm that eases you into sleep.",
-				image: "/ingredients-page/Pasiflora Extract Ingredients.webp",
+				image: "/ingredients-page/Super Sleep/Passion Flower.jpg",
 				category: "Super Sleep",
 			},
 			{
@@ -170,7 +170,7 @@ export const tabs = [
 				name: "Ashwagandha Extract",
 				description:
 					"Used for centuries in Ayurvedic medicine, ashwagandha helps balance the nervous system and lower cortisol — your body’s main stress hormone — so you can unwind and sleep more easily.",
-				image: "/ingredients-page/Ashwagandha Extract.webp",
+				image: "/ingredients-page/Super Sleep/Ashwagandha.jpg",
 				category: "Super Sleep",
 			},
 			{
@@ -178,7 +178,7 @@ export const tabs = [
 				name: "Chamomile Extract",
 				description:
 					"Chamomile has long been trusted for relaxation. In its concentrated extract form, its calming effects are amplified, helping you transition gently into sleep without grogginess the next day.",
-				image: "/ingredients-page/chamomile.webp",
+				image: "/ingredients-page/Super Sleep/chamomile.jpg",
 				category: "Super Sleep",
 			},
 			{
@@ -186,7 +186,7 @@ export const tabs = [
 				name: "5-HTP (5-Hydroxytryptophan)",
 				description:
 					"Sourced from an African plant, 5-HTP boosts serotonin levels, which in turn supports melatonin production. That means better mood and better sleep in one simple step.",
-				image: "/ingredients-page/htp.png",
+				image: "/ingredients-page/Super Sleep/5-HTP.jpg",
 				category: "Super Sleep",
 			},
 		],
@@ -202,7 +202,7 @@ export const tabs = [
 				name: "Alpha GPC (Glycerylphosphorylcholine)",
 				description:
 					"Alpha GPC is a highly bioavailable form of choline that enhances the production of acetylcholine — the key neurotransmitter for learning and memory. It helps you think faster and recall more accurately.",
-				image: "/ingredients-page/Alpha GPC Ingredients.png",
+				image: "/ingredients-page/Super Brain/Alpha GPC.jpg",
 				category: "Super Brain",
 			},
 			{
@@ -210,7 +210,7 @@ export const tabs = [
 				name: "Bacopa Extract (Bacopa monnieri)",
 				description:
 					"Used for centuries to support cognitive function, Bacopa enhances memory, reduces anxiety, and improves learning ability. Perfect for students, creatives, and curious minds.",
-				image: "/ingredients-page/chamomile.webp",
+				image: "/ingredients-page/Super Brain/Bacopa.jpg",
 				category: "Super Brain",
 			},
 			{
@@ -218,7 +218,7 @@ export const tabs = [
 				name: "Lion’s Mane Mushroom (Hericium erinaceus)",
 				description:
 					"Lion’s Mane stimulates the production of Nerve Growth Factor (NGF), supporting brain regeneration. It enhances focus, memory, and mental clarity — pure neuroplastic power.",
-				image: "/ingredients-page/Hongo-Melena-de-Leon.png",
+				image: "/ingredients-page/Super Brain/Lion_s Mane Mushroom.jpg",
 				category: "Super Brain",
 			},
 			{
@@ -226,7 +226,7 @@ export const tabs = [
 				name: "Ginkgo Extract (Ginkgo biloba)",
 				description:
 					"Ginkgo improves blood flow to the brain, helping to oxygenate your thoughts. It supports memory and attention, especially when you need to stay focused for long periods.",
-				image: "/ingredients-page/Ginkgo Ingredients.png",
+				image: "/ingredients-page/Super Brain/Ginkgo biloba.jpg",
 				category: "Super Brain",
 			},
 			{
@@ -234,7 +234,7 @@ export const tabs = [
 				name: "Guayusa Extract (Ilex guayusa)",
 				description:
 					"Guayusa is an Amazonian plant rich in natural caffeine and antioxidants. It delivers smooth, sustained energy without the jitters, enhancing alertness and focus — a natural boost for peak productivity.",
-				image: "/ingredients-page/guayusa.png",
+				image: "/ingredients-page/Super Brain/Guayusa.jpg",
 				category: "Super Brain",
 			},
 		],
