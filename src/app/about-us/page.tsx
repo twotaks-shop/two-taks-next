@@ -27,24 +27,23 @@ export default function AboutUsPage() {
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
 						<div className="relative rounded-lg overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl">
 							<div className="aspect-[4/5] relative bg-neutral-100 overflow-hidden">
-								{/* Replace with actual image of Jorge */}
 								<Image
-									src="/about-us/about-us-2.webp"
+									src="/about-us/about-us-1.png"
 									alt="Twotaks"
 									fill
 									className="object-cover transition-transform duration-500 group-hover:scale-105"
-									sizes="(max-width: 768px) 100vw, 50vw"
+									quality={100}
 								/>
 							</div>
 						</div>
 						<div className="relative rounded-lg overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl">
 							<div className="aspect-[4/5] relative bg-neutral-100 overflow-hidden">
 								<Image
-									src="/about-us/about-us-1.jpg"
+									src="/about-us/about-us-2.png"
 									alt="Twotaks"
 									fill
 									className="object-cover transition-transform duration-500 group-hover:scale-105"
-									sizes="(max-width: 768px) 100vw, 50vw"
+									quality={100}
 								/>
 							</div>
 						</div>
@@ -60,8 +59,8 @@ export default function AboutUsPage() {
 							</p>
 
 							<p className="text-xl text-neutral-800 leading-relaxed mb-8">
-								One day, over a casual conversation, they told him: &quot;Some days we feel
-								exhausted. We need something that&apos;ll help us feel 100%.&quot;
+								One day, over a casual conversation, they told him: &quot;Some days we
+								feel exhausted. We need something that&apos;ll help us feel 100%.&quot;
 							</p>
 
 							<p className="text-xl text-neutral-800 leading-relaxed mb-8">
@@ -80,8 +79,8 @@ export default function AboutUsPage() {
 
 							<p className="text-xl text-neutral-800 leading-relaxed mb-8">
 								They created Super Brain—not to sell, but to survive their own grind. No
-								budget limits. No shortcuts. Just the best ingredients, because that&apos;s
-								what they wanted in their own bodies.
+								budget limits. No shortcuts. Just the best ingredients, because
+								that&apos;s what they wanted in their own bodies.
 							</p>
 
 							<p className="text-xl text-neutral-800 leading-relaxed mb-8">
@@ -92,8 +91,8 @@ export default function AboutUsPage() {
 							</p>
 
 							<p className="text-xl text-neutral-800 leading-relaxed mb-8">
-								Soon they realized this shouldn&apos;t be just for them. It should be for
-								everyone.
+								Soon they realized this shouldn&apos;t be just for them. It should be
+								for everyone.
 							</p>
 
 							<div className="my-16 text-center">

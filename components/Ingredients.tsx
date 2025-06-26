@@ -17,7 +17,7 @@ export default function Ingredients({
 		"/ingredients-page/Super Brain/Lion_s Mane Mushroom.jpg",
 	];
 
-	const fallbackImage = "/ingredients/ingredients_fallback.webp";
+	const fallbackImage = "/ingredients-page/ingredients_fallback.webp";
 
 	const imagePositions = [
 		{ top: "5%", left: "10%", size: 80 },

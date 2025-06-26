@@ -15,7 +15,7 @@ export default function AboutUs({ className = "" }: { className?: string }) {
 							<div className="absolute -inset-2 bg-gray-50 rounded-full opacity-30 blur-xl"></div>
 							<div className="aspect-w-4 aspect-h-3 relative w-full h-[350px] sm:h-[450px] lg:h-[500px]">
 								<Image
-									src="/about-us/Two Taks Launch IMG 0958.jpg"
+									src="/about-us/about-us-2.png"
 									alt="Two Taks team"
 									fill
 									sizes="(max-width: 768px) 100vw, 50vw"
@@ -48,7 +48,10 @@ export default function AboutUs({ className = "" }: { className?: string }) {
 						</div>
 
 						<div className="mt-8">
-							<Link href="/about-us" className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+							<Link
+								href="/about-us"
+								className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+							>
 								OUR STORY
 							</Link>
 						</div>

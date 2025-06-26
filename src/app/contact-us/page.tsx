@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactUsPage() {
@@ -6,6 +7,17 @@ export default function ContactUsPage() {
 			<h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
 				Tell us what’s on your mind — We’ll actually reply
 			</h1>
+			
+			<div className="aspect-video relative rounded-lg bg-neutral-100 overflow-hidden mt-10">
+				<Image
+					src="/contact-us.png"
+					alt="Contact Us. Two Taks Team"
+					fill
+					className="object-cover transition-transform duration-500 group-hover:scale-105"
+					quality={100}
+				/>
+			</div>
+
 			<div className="mt-10">
 				<p className="text-2xl">
 					Questions, brilliant ideas, love notes, or even existential confusion…

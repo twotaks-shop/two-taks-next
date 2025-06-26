@@ -73,13 +73,13 @@ export function Standards() {
 						<div className="mt-10 grid md:grid-cols-2 gap-8">
 							<div className="rounded-lg overflow-hidden">
 								<div className="relative">
-									<div className="w-full aspect-video bg-gray-200 relative overflow-hidden">
+									<div className="w-full aspect-video bg-gray-100 relative overflow-hidden">
 										<video
 											ref={video1Ref}
 											className="w-full aspect-video"
 											controls
 											playsInline
-											poster="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?q=80&w=2574&auto=format&fit=crop"
+											poster="/images/prev-2.png"
 										>
 											<source
 												src="https://cdn.shopify.com/videos/c/o/v/5441b095b0f54d83994e7b4f9e8df7b1.mov"
@@ -102,13 +102,13 @@ export function Standards() {
 
 							<div className="rounded-lg overflow-hidden">
 								<div className="relative">
-									<div className="w-full aspect-video bg-gray-200 relative overflow-hidden">
+									<div className="w-full aspect-video bg-gray-100 relative overflow-hidden">
 										<video
 											ref={video2Ref}
 											className="w-full aspect-video"
 											controls
 											playsInline
-											poster="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2670&auto=format&fit=crop"
+											poster="/images/prev-1.png"
 										>
 											<source
 												src="https://cdn.shopify.com/videos/c/o/v/51890e344c7247a6b4145afe1f1027ba.mov"
