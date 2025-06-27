@@ -53,7 +53,7 @@ export default function ProductShowcase({ className = "" }) {
 							<div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-20 rounded-3xl"></div>
 							<div className="absolute -inset-4 bg-gray-50 rounded-full opacity-30 blur-xl"></div>
 							<Image
-								src="/showcase/product-bottles.webp"
+								src="/showcase/product-bottles.png"
 								alt="twotaks wellness products"
 								className="w-full h-auto max-h-[450px] lg:max-h-[600px] xl:max-h-[850px] 2xl:max-h-[950px] object-contain relative z-10 drop-shadow-xl"
 								width={900}
