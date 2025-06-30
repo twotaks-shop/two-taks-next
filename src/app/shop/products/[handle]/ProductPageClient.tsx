@@ -42,7 +42,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 	>(null);
 	const [quantity, setQuantity] = useState(1);
 	const [isLoading, setIsLoading] = useState(true);
-	const { addItem } = useCartStore();
+	const { addItem, toggleCart } = useCartStore();
 
 	useEffect(() => {
 		async function loadData() {
@@ -203,6 +203,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				isSubscription,
 			});
 		}
+		toggleCart();
 	};
 
 	return (
