@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useCartStore } from "../../lib/cart-store";
 import { createCheckout } from "../../lib/shopify";
 import { PLACEHOLDER_IMAGE_URL } from "../../lib/const";
+import { LiaShippingFastSolid } from "react-icons/lia";
 
 export default function CartSidebar() {
 	const {
@@ -75,6 +76,10 @@ export default function CartSidebar() {
 							</div>
 						) : (
 							<div className="space-y-6">
+								<div>
+									<h2 className="text-md font-heading-medium mb-4">YOUR PURCHASES</h2>
+									<hr></hr>
+								</div>
 								{items.map((item) => (
 									<div
 										key={`${item.variantId}-${item.sellingPlanId || "one-time"}`}
@@ -172,6 +177,14 @@ export default function CartSidebar() {
 										</div>
 									</div>
 								))}
+								<div>
+									<h2 className="text-md font-heading-medium mb-4">OFFERS</h2>
+									<hr></hr>
+								</div>
+								<div className="flex gap-4 items-center">
+									<LiaShippingFastSolid className="text-md" />
+									<span className="font-medium">FREE SHIPPING</span>
+								</div>
 							</div>
 						)}
 					</div>
