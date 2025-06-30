@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 interface BenefitItemProps {
 	text: string;
@@ -63,7 +62,7 @@ export default function ProductShowcase({ className = "" }) {
 						</div>
 					</div>
 					<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50 opacity-20 pointer-events-none"></div>
-					<div className="w-full lg:w-5/12 xl:w-4/12 mb-16 lg:mb-0 text-center lg:text-left relative z-10">
+					<div className="w-full lg:w-5/12 xl:w-4/12 lg:mb-0 text-center lg:text-left relative z-10">
 						<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-brand font-black tracking-tight text-gray-900 mb-6 leading-none">
 							Activate your potential
 						</h2>
@@ -93,13 +92,6 @@ export default function ProductShowcase({ className = "" }) {
 								))}
 							</div>
 						</div>
-
-						<Link
-							href="/shop/collections/all-products"
-							className="font-brand uppercase tracking-[0.25em] text-sm bg-black text-white hover:bg-gray-800 py-3 px-10 md:py-4 md:px-12 cursor-pointer transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-						>
-							Try it now
-						</Link>
 					</div>
 				</div>
 			</div>
