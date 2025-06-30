@@ -177,6 +177,57 @@ export default function CartSidebar() {
 										</div>
 									</div>
 								))}
+								{items.findIndex((item) => item.handle === "super-bundle") !== -1 ? (
+									<>
+										<div>
+											<h2 className="text-md font-heading-medium mb-4">
+												YOUR SUPER BUNDLE INCLUDES
+											</h2>
+										</div>
+
+										<div className="flex gap-4">
+											<div className="relative w-20 h-20 bg-neutral-50">
+												<Image
+													src="https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Morning1.png"
+													alt="Super Morning"
+													fill
+													sizes="80px"
+													className="object-cover"
+												/>
+											</div>
+
+											<div className="relative w-20 h-20 bg-neutral-50">
+												<Image
+													src="https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Immune1.png"
+													alt="Super Immune"
+													fill
+													sizes="80px"
+													className="object-cover"
+												/>
+											</div>
+
+											<div className="relative w-20 h-20 bg-neutral-50">
+												<Image
+													src="https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Sleep4.png"
+													alt="Super Sleep"
+													fill
+													sizes="80px"
+													className="object-cover"
+												/>
+											</div>
+
+											<div className="relative w-20 h-20 bg-neutral-50">
+												<Image
+													src="https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_8461-Photoroom.png?v=1750891823"
+													alt="Smart Thermos Bottle"
+													fill
+													sizes="80px"
+													className="object-cover"
+												/>
+											</div>
+										</div>
+									</>
+								) : null}
 								<div>
 									<h2 className="text-md font-heading-medium mb-4">OFFERS</h2>
 									<hr></hr>
