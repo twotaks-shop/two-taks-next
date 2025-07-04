@@ -19,24 +19,24 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
-  description:
-    "Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
-  openGraph: {
-    title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
-    description:
-      "Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
-    url: "https://twotaks.com/",
-    siteName: "TwoTaks -",
-    locale: "en_US",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
-    description:
-      "Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
-  },
+	title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
+	description:
+		"Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
+	openGraph: {
+		title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
+		description:
+			"Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
+		url: "https://twotaks.com/",
+		siteName: "TwoTaks -",
+		locale: "en_US",
+		type: "article",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Home - Two Taks - Premium Natural Supplements for Peak Performance",
+		description:
+			"Discover Two Taks: premium natural supplements with adaptogens & nootropics to optimize mind, body & energy. Unlock your full potential today!",
+	},
 };
 
 export default function RootLayout({
@@ -46,11 +46,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-		 <Script
-          id="refersion-tracking"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+			<Script
+				id="refersion-tracking"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
               (function(e, n, t, i, o, c, s, a) {
                 e.TrackingSystemObject = "r";
                 (s = n.createElement(t)).async = 1;
@@ -67,9 +67,23 @@ export default function RootLayout({
                 };
                 (a = n.getElementsByTagName(t)[0]).parentNode.insertBefore(s, a);
               })(window, document, "script");
-            `
-          }}
-        />
+            `,
+				}}
+			/>
+			<Script id="meta-pixel" strategy="afterInteractive">
+				{`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1268790824657717');
+            fbq('track', 'PageView');
+          `}
+			</Script>
 			<body
 				className={`${montserrat.variable} ${leagueSpartan.variable} antialiased`}
 			>
