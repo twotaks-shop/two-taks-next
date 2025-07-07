@@ -14,18 +14,28 @@ import {
 	renewCustomerAccessToken,
 } from "./shopify";
 
+interface CustomerUserError {
+	code: string;
+	message: string;
+}
+
 interface CustomerStore {
 	customer: ShopifyCustomer | null;
 	accessToken: ShopifyCustomerAccessToken | null;
 	isLoading: boolean;
 	error: string | null;
 
-	login: (
-		input: CustomerLoginInput,
-	) => Promise<{ success: boolean; error?: string }>;
+	login: (input: CustomerLoginInput) => Promise<{
+		success: boolean;
+		error?: string;
+	}>;
 	register: (
 		input: CustomerCreateInput,
-	) => Promise<{ success: boolean; error?: string }>;
+	) => Promise<{
+		success: boolean;
+		error?: string;
+		customerUserErrors?: CustomerUserError[];
+	}>;
 	logout: () => Promise<void>;
 	fetchCustomer: () => Promise<void>;
 	renewToken: () => Promise<boolean>;
@@ -94,12 +104,18 @@ export const useCustomerStore = create<CustomerStore>()(
 							set({ isLoading: false });
 							return {
 								success: true,
-								error: result.errors[0].message, 
+								error: result.errors[0].message,
 							};
 						}
 
-						set({ error: "Something went wrong. Please try again later.", isLoading: false });
-						return { success: false, error: "Something went wrong. Please try again later." };
+						set({
+							error: "Something went wrong. Please try again later.",
+							isLoading: false,
+						});
+						return {
+							success: false,
+							error: "Something went wrong. Please try again later.",
+						};
 					}
 
 					if (result.customer) {

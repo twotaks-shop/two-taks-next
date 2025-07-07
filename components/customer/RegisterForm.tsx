@@ -28,8 +28,8 @@ export default function RegisterForm({
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-	const [formHidden, setFormHidden] = useState(false); // <--- nuevo estado para ocultar formulario
-
+	const [formHidden, setFormHidden] = useState(false); 
+	
 	const handleInputChange = useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {
 			const { name, value, type, checked } = e.target;
@@ -72,7 +72,6 @@ export default function RegisterForm({
 
 		const result = await register(formData);
 
-		// Detectamos error CUSTOMER_DISABLED y tratamos como éxito
 		if (result.customerUserErrors && result.customerUserErrors.length > 0) {
 			const disabledError = result.customerUserErrors.find(
 				(err) => err.code === "CUSTOMER_DISABLED",
