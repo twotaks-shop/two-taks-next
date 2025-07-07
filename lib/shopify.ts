@@ -748,17 +748,17 @@ export async function createCheckout(
 			throw new Error(data.cartCreate.userErrors[0].message);
 		}
 		const checkoutUrl = data.cartCreate.cart.checkoutUrl;
-  const parsedUrl = new URL(checkoutUrl);
-  
-  parsedUrl.searchParams.delete("key");
+		const parsedUrl = new URL(checkoutUrl);
 
-  const checkoutToken = parsedUrl.toString().split("/").pop();
-  	
-  RefersionUtils.sendCheckoutEvent(checkoutToken!)
-  
-		return checkoutUrl
+		parsedUrl.searchParams.delete("key");
+
+		const checkoutToken = parsedUrl.toString().split("/").pop();
+
+		RefersionUtils.sendCheckoutEvent(checkoutToken!);
+
+		return checkoutUrl;
 	} catch {
-		console.error("Something wrong happened")
+		console.error("Something wrong happened");
 	}
 }
 

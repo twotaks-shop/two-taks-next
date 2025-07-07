@@ -7,6 +7,7 @@ import CartSidebar from "../../components/shop/CartSidebar";
 import MainContentWrapper from "../../components/MainContentWrapper";
 import AuthModalWrapper from "../../components/customer/AuthModalWrapper";
 import Script from "next/script";
+import SubscriptionPopupWrapper from "../../components/SubscriptionPopupWrapper";
 
 const leagueSpartan = League_Spartan({
 	variable: "--font-league-spartan",
@@ -94,6 +95,7 @@ export default function RootLayout({
 				</MainContentWrapper>
 				<CartSidebar />
 				<AuthModalWrapper />
+				<SubscriptionPopupWrapper />
 			</body>
 		</html>
 	);
