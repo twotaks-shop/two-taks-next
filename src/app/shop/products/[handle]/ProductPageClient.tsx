@@ -10,6 +10,7 @@ import ProductCard from "../../../../../components/shop/ProductCard";
 import SubscriptionOptions from "../../../../../components/customer/SubscriptionOptions";
 import { useCartStore } from "../../../../../lib/cart-store";
 import { PLACEHOLDER_IMAGE_URL } from "../../../../../lib/const";
+import { ProductReviews } from "../../../../../components/ProductReviews";
 
 interface ProductPageClientProps {
 	handle: string;
@@ -181,7 +182,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					finalPrice =
 						price - parseFloat(adjustment.adjustmentValue.fixedAmount.amount);
 				}
-				
+
 				sellingPlanName = sellingPlan.name;
 				isSubscription = true;
 			}
@@ -344,7 +345,6 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 						</button>
 
 						<div className="text-sm text-neutral-500 space-y-2">
-							
 							<div className="flex items-center text-sm text-gray-700 space-x-1 mt-2">
 								<Image
 									src="/klarna.png"
@@ -389,6 +389,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</div>
 				</div>
 			)}
+			{product && <ProductReviews handle={product.handle} />}
 		</main>
 	);
 }
