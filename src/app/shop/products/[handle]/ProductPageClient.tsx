@@ -376,6 +376,30 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				</div>
 			</div>
 
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <Image
+    src="/1.jpg"
+    alt="Formulas for superhumans"
+    className="w-full h-auto"
+    width={1000}
+    height={1000}
+  />
+  <Image
+    src="/2.jpg"
+    alt="How to take TwoTaks"
+    className="w-full h-auto"
+    width={1000}
+    height={1000}
+  />
+  <Image
+    src="/3.jpg"
+    alt="Superhuman standards only"
+    className="w-full h-auto"
+    width={1000}
+    height={1000}
+  />
+</div>
+
 			{relatedProducts.length > 0 && (
 				<div className="mt-24 pt-12 border-t border-neutral-200">
 					<h2 className="text-2xl font-heading-medium mb-8 text-neutral-900">
