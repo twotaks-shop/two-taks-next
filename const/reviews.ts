@@ -1,4 +1,17 @@
-export const REVIEWS = [
+interface Review {
+	handle: string;
+	reviews: {
+		title: string;
+		content: string;
+		image?: string;
+		author: string;
+		age: number;
+		occupation: string;
+		location: string;
+	}[];
+}
+
+export const REVIEWS: Review[] = [
 	{
 		handle: "super-sleep",
 		reviews: [
@@ -10,6 +23,8 @@ export const REVIEWS = [
 				age: 27,
 				occupation: "UX designer",
 				location: "New York",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8081.heic?v=1753472963",
 			},
 			{
 				title: "Finally, I can sleep",
@@ -60,6 +75,8 @@ export const REVIEWS = [
 				age: 35,
 				occupation: "project manager",
 				location: "Austin",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8105.heic?v=1753472966",
 			},
 			{
 				title: "Might get it tattooed Bundle > Burnout",
@@ -69,6 +86,8 @@ export const REVIEWS = [
 				age: 41,
 				occupation: "video editor",
 				location: "Seattle",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8100.heic?v=1753472966",
 			},
 			{
 				title: "I’ve never felt this well-rounded",
@@ -110,6 +129,8 @@ export const REVIEWS = [
 				age: 24,
 				occupation: "medical student",
 				location: "Chicago",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8104.heic?v=1753472965",
 			},
 			{
 				title: "I used to hit snooze like it owed me money",
@@ -128,6 +149,8 @@ export const REVIEWS = [
 				age: 29,
 				occupation: "Sport Model",
 				location: "Miami",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8097.heic?v=1753472965",
 			},
 			{
 				title: "I don’t hate mornings anymore. That’s the miracle",
@@ -160,6 +183,8 @@ export const REVIEWS = [
 				age: 29,
 				occupation: "Law Student",
 				location: "Denver",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8106.heic?v=1753472965",
 			},
 			{
 				title: "Trivia nights? I dominate now",
@@ -187,6 +212,8 @@ export const REVIEWS = [
 				age: 35,
 				occupation: "software engineer",
 				location: "Arkansas",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8096.heic?v=1753472964",
 			},
 			{
 				title: "Creativity was trying to escape me",
@@ -219,6 +246,8 @@ export const REVIEWS = [
 				age: 42,
 				occupation: "Travel guide",
 				location: "New Mexico",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8107.heic?v=1753472965",
 			},
 			{
 				title: "I stopped carrying a pharmacy in my bag",
@@ -237,6 +266,8 @@ export const REVIEWS = [
 				age: 34,
 				occupation: "Video Game Designer",
 				location: "West Virginia",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8095.heic?v=1753472964",
 			},
 			{
 				title: "People cough over me in interviews",
@@ -246,6 +277,8 @@ export const REVIEWS = [
 				age: 31,
 				occupation: "Human Resources Manager",
 				location: "Wyoming",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8080.heic?v=1753472963",
 			},
 		],
 	},

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getProduct } from "../../../../../lib/shopify";
 import { fetchRelatedProducts } from "../../../../../lib/fetch-related-products";
 import { ShopifyProduct } from "../../../../../lib/types";
@@ -11,10 +11,118 @@ import SubscriptionOptions from "../../../../../components/customer/Subscription
 import { useCartStore } from "../../../../../lib/cart-store";
 import { PLACEHOLDER_IMAGE_URL } from "../../../../../lib/const";
 import { ProductReviews } from "../../../../../components/ProductReviews";
+import ProductPageCarousel, {
+	ProductImage,
+} from "../../../../../components/shop/ProductPageCarousel";
+import { ProductDropdowns } from "../../../../../components/shop/ProductDropdowns";
+import useViewport from "../../../../../hooks/useViewport";
 
 interface ProductPageClientProps {
 	handle: string;
 }
+
+const mainProductsCarousel: { [key: string]: ProductImage[] } = {
+	"super-morning": [
+		{
+			id: "1",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning_Mesa_de_trabajo_1.jpg?v=1753462916",
+			alt: "super morning",
+		},
+		{
+			id: "2",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning-02.jpg?v=1753462914",
+			alt: "super morning",
+		},
+		{
+			id: "3",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning-03.jpg?v=1753462914",
+			alt: "super morning",
+		},
+	],
+	"super-immune": [
+		{
+			id: "1",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune_Mesa_de_trabajo_1.jpg?v=1753462916",
+			alt: "super immune",
+		},
+		{
+			id: "2",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune-02.jpg?v=1753462914",
+			alt: "super immune",
+		},
+		{
+			id: "3",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune-03.jpg?v=1753462914",
+			alt: "super immune",
+		},
+	],
+	"super-sleep": [
+		{
+			id: "1",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep_Mesa_de_trabajo_1.jpg?v=1753462914",
+			alt: "super sleep",
+		},
+		{
+			id: "2",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep-02.jpg?v=1753462914",
+			alt: "super sleep",
+		},
+		{
+			id: "3",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep-03.jpg?v=1753462913",
+			alt: "super sleep",
+		},
+	],
+	"super-brain": [
+		{
+			id: "1",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain_Mesa_de_trabajo_1.jpg?v=1753462915",
+			alt: "super brain",
+		},
+		{
+			id: "2",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain-02.jpg?v=1753462914",
+			alt: "super brain",
+		},
+		{
+			id: "3",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain-03.jpg?v=1753462915",
+			alt: "super brain",
+		},
+	],
+	"super-bundle": [
+		{
+			id: "1",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle_Mesa_de_trabajo_1.jpg?v=1753462909",
+			alt: "super bundle",
+		},
+		{
+			id: "2",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-02.jpg?v=1753462914",
+			alt: "super bundle",
+		},
+		{
+			id: "3",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-03.jpg?v=1753462913",
+			alt: "super bundle",
+		},
+		{
+			id: "4",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-04.jpg?v=1753462915",
+			alt: "super bundle",
+		},
+		{
+			id: "5",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-05.jpg?v=1753462915",
+			alt: "super bundle",
+		},
+		{
+			id: "6",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-06.jpg?v=1753462910",
+			alt: "super bundle",
+		},
+	],
+};
 
 async function fetchData(handle: string) {
 	const product = await getProduct(handle);
@@ -44,6 +152,11 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 	const [quantity, setQuantity] = useState(1);
 	const [isLoading, setIsLoading] = useState(true);
 	const { addItem, toggleCart } = useCartStore();
+
+	const video1Ref = useRef<HTMLVideoElement>(null);
+	const video2Ref = useRef<HTMLVideoElement>(null);
+
+	const viewport = useViewport();
 
 	useEffect(() => {
 		async function loadData() {
@@ -217,8 +330,18 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					← Back to shop
 				</Link>
 			</div>
+			{mainProductsCarousel.hasOwnProperty(product.handle) &&
+				mainProductsCarousel[product.handle]?.length > 0 &&
+				viewport === "mobile" &&
+				mainProductsCarousel.hasOwnProperty(product.handle) && (
+					<ProductPageCarousel
+						autoPlay={false}
+						aspect="9/15"
+						images={mainProductsCarousel[product.handle]}
+					/>
+				)}
 
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
 				<div className="space-y-4">
 					<div className="relative aspect-square bg-neutral-50 rounded-lg overflow-hidden">
 						<Image
@@ -376,29 +499,157 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  <Image
-    src="/1.jpg"
-    alt="Formulas for superhumans"
-    className="w-full h-auto"
-    width={1000}
-    height={1000}
-  />
-  <Image
-    src="/2.jpg"
-    alt="How to take TwoTaks"
-    className="w-full h-auto"
-    width={1000}
-    height={1000}
-  />
-  <Image
-    src="/3.jpg"
-    alt="Superhuman standards only"
-    className="w-full h-auto"
-    width={1000}
-    height={1000}
-  />
-</div>
+			{mainProductsCarousel.hasOwnProperty(product.handle) &&
+				mainProductsCarousel[product.handle]?.length > 0 &&
+				viewport === "desktop" &&
+				mainProductsCarousel.hasOwnProperty(product.handle) && (
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 mb-20">
+						{mainProductsCarousel[product.handle].map((image, index) => (
+							<Image
+								key={index}
+								src={image.url}
+								alt={image.alt}
+								className="w-full h-auto rounded-lg"
+								width={1000}
+								height={1000}
+							/>
+						))}
+					</div>
+				)}
+
+			{product && <ProductReviews handle={product.handle} />}
+
+			{viewport == "desktop" ? (
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+					<Image
+						src="/1.jpg"
+						alt="Formulas for superhumans"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+					<Image
+						src="/2.jpg"
+						alt="How to take TwoTaks"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+					<Image
+						src="/3.jpg"
+						alt="Superhuman standards only"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+				</div>
+			) : (
+				<div className="mt-10">
+					<ProductPageCarousel
+						autoPlay={false}
+						aspect="9/16"
+						images={[
+							{
+								id: "/1.jpg",
+								url: "/1.jpg",
+								alt: "Formulas for superhumans",
+							},
+							{
+								id: "/2.jpg",
+								url: "/2.jpg",
+								alt: "How to take TwoTaks",
+							},
+							{
+								id: "/3.jpg",
+								url: "/2.jpg",
+								alt: "Superhuman standards only",
+							},
+						]}
+					/>
+				</div>
+			)}
+
+			{(product.handle === "super-morning" ||
+				product.handle === "super-brain" ||
+				product.handle === "super-sleep" ||
+				product.handle === "super-immune") && (
+				<ProductDropdowns product={product.handle} />
+			)}
+
+			<div className="mt-16 text-center">
+				<h3 className="text-2xl md:text-3xl font-heading-bold mb-4">
+					How We Build Superhuman Quality
+				</h3>
+				<p className="text-gray-600 max-w-2xl mx-auto mb-6">
+					Inside every capsule: science, care, and clean power.
+				</p>
+				<p className="text-gray-600 max-w-2xl mx-auto mb-6">
+					Go behind the scenes to discover how we guarantee the quality of every
+					product—from rigorous testing to the premium ingredients we choose.
+				</p>
+
+				<div className="mt-8">
+					<div className="mt-10 grid md:grid-cols-2 gap-8">
+						<div className="rounded-lg overflow-hidden">
+							<div className="relative">
+								<div className="w-full aspect-video bg-gray-100 relative overflow-hidden">
+									<video
+										ref={video1Ref}
+										className="w-full aspect-video"
+										controls
+										playsInline
+										poster="/images/prev-2.png"
+									>
+										<source
+											src="https://cdn.shopify.com/videos/c/o/v/5441b095b0f54d83994e7b4f9e8df7b1.mov"
+											type="video/mp4"
+										/>
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+							<div className="p-4 bg-white">
+								<h3 className="text-xl font-semibold text-gray-900">
+									Quality Control Process
+								</h3>
+								<p className="text-gray-600 mt-2">
+									Discover how we ensure every capsule meets the highest standards—safe,
+									effective, and consistent.
+								</p>
+							</div>
+						</div>
+
+						<div className="rounded-lg overflow-hidden">
+							<div className="relative">
+								<div className="w-full aspect-video bg-gray-100 relative overflow-hidden">
+									<video
+										ref={video2Ref}
+										className="w-full aspect-video"
+										controls
+										playsInline
+										poster="/images/prev-1.png"
+									>
+										<source
+											src="https://cdn.shopify.com/videos/c/o/v/51890e344c7247a6b4145afe1f1027ba.mov"
+											type="video/mp4"
+										/>
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+							<div className="p-4 bg-white">
+								<h3 className="text-xl font-semibold text-gray-900">
+									Premium Ingredients
+								</h3>
+								<p className="text-gray-600 mt-2">
+									Take a closer look at the ingredients behind our formulas—and why only
+									the best make it into your routine.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			{relatedProducts.length > 0 && (
 				<div className="mt-24 pt-12 border-t border-neutral-200">
@@ -413,7 +664,6 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</div>
 				</div>
 			)}
-			{product && <ProductReviews handle={product.handle} />}
 		</main>
 	);
 }
