@@ -38,13 +38,13 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 								</div>
 								<div>
 									<h4 className="font-medium mb-2">
-										What's Inside (per 2-capsule serving):
+										What&apos;s Inside (per 2-capsule serving):
 									</h4>
 									<p className="font-medium">Super Brain Blend – 2825 mg</p>
 									<ul className="list-disc pl-5 mt-2 space-y-1">
 										<li>Alpha GPC – Mental clarity unlocked.</li>
 										<li>Bacopa Monnieri – Memory enhancement.</li>
-										<li>Lion's Mane (10:1) – Grows new neural connections.</li>
+										<li>Lion&apos;s Mane (10:1) – Grows new neural connections.</li>
 										<li>Ginkgo Biloba – Improved blood flow to the brain.</li>
 										<li>Guayusa – Clean, jitter-free energy.</li>
 										<li>BioPerine® – Boosts absorption like a cheat code.</li>
@@ -62,8 +62,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									These capsules don't taste like berries. They don't taste like anything
-									— and that's exactly the point.
+									These capsules don&apos;t taste like berries. They don&apos;t taste
+									like anything — and that&apos;s exactly the point.
 								</p>
 								<p>
 									No sugar. No junk. No fluff. Just science-backed ingredients that build
@@ -76,7 +76,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									<li>Feel mentally unstoppable.</li>
 								</ul>
 								<p>
-									Because true clarity takes time — and you're not here for shortcuts.
+									Because true clarity takes time — and you&apos;re not here for
+									shortcuts.
 								</p>
 							</div>
 						),
@@ -86,8 +87,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									You're putting this in your brain — we took that seriously. Super Brain
-									is:
+									You&apos;re putting this in your brain — we took that seriously. Super
+									Brain is:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>GMP Certified.</li>
@@ -109,8 +110,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									We offer you a challenge: to activate your mind like never before.
 								</p>
 								<p>
-									Super Brain isn't for the curious — it's for the committed. For those
-									ready to go:
+									Super Brain isn&apos;t for the curious — it&apos;s for the committed.
+									For those ready to go:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>From distraction to deep focus.</li>
@@ -160,7 +161,7 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 								</div>
 								<div>
 									<h4 className="font-medium mb-2">
-										What's Inside (per 2-capsule serving):
+										What&apos;s Inside (per 2-capsule serving):
 									</h4>
 									<p className="font-medium">Super Morning Blend – 868 mg</p>
 									<ul className="list-disc pl-5 mt-2 space-y-1">
@@ -189,7 +190,7 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 							<div className="space-y-4 text-neutral-700">
 								<p>
 									Forget sugary drinks and caffeine rollercoasters. Super Morning is not
-									about the spike — it's about the sustained power.
+									about the spike — it&apos;s about the sustained power.
 								</p>
 								<p>Over time, it helps you:</p>
 								<ul className="list-disc pl-5 space-y-1">
@@ -199,7 +200,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									<li>Show up with real energy (not fake hype)</li>
 								</ul>
 								<p>
-									Because you weren't made for burnout — you were built to go superhuman.
+									Because you weren&apos;t made for burnout — you were built to go
+									superhuman.
 								</p>
 							</div>
 						),
@@ -209,8 +211,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									You put this in your body every morning — so we made sure it's worthy.
-									Super Morning is:
+									You put this in your body every morning — so we made sure it&apos;s
+									worthy. Super Morning is:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>GMP Certified.</li>
@@ -232,15 +234,15 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 							<div className="space-y-4 text-neutral-700">
 								<p>We offer you a challenge: to start every day at 100%.</p>
 								<p>
-									Super Morning isn't a feel-good pill. It's a decision — to be alert,
-									driven, focused. For those ready to go:
+									Super Morning isn&apos;t a feel-good pill. It&apos;s a decision — to be
+									alert, driven, focused. For those ready to go:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>From sluggish to strong.</li>
 									<li>From scattered to sharp.</li>
 									<li>From tired to unstoppable.</li>
 								</ul>
-								<p>You in? Let's go.</p>
+								<p>You in? Let&apos;s go.</p>
 							</div>
 						),
 					},
@@ -284,7 +286,7 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 								</div>
 								<div>
 									<h4 className="font-medium mb-2">
-										What's Inside (per 2-capsule serving):
+										What&apos;s Inside (per 2-capsule serving):
 									</h4>
 									<p className="font-medium">Super Sleep Blend – 600 mg</p>
 									<ul className="list-disc pl-5 mt-2 space-y-1">
@@ -312,8 +314,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									Super Sleep isn't a knockout pill. It's a long-term tool for restoring
-									your natural sleep rhythm.
+									Super Sleep isn&apos;t a knockout pill. It&apos;s a long-term tool for
+									restoring your natural sleep rhythm.
 								</p>
 								<p>With consistent use, it helps you:</p>
 								<ul className="list-disc pl-5 space-y-1">
@@ -323,8 +325,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									<li>Reduce stress and overthinking at night.</li>
 								</ul>
 								<p>
-									Because real sleep isn't about shutting down. It's about recovering
-									like a superhuman.
+									Because real sleep isn&apos;t about shutting down. It&apos;s about
+									recovering like a superhuman.
 								</p>
 							</div>
 						),
@@ -334,8 +336,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									Sleep is sacred — and so is what you put in your body. That's why Super
-									Sleep is:
+									Sleep is sacred — and so is what you put in your body. That&apos;s why
+									Super Sleep is:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>GMP Certified.</li>
@@ -364,7 +366,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									<li>Reclaim the kind of sleep that rebuilds</li>
 								</ul>
 								<p>
-									If you're ready to make sleep your superpower, this is your formula.
+									If you&apos;re ready to make sleep your superpower, this is your
+									formula.
 								</p>
 							</div>
 						),
@@ -407,7 +410,7 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 								</div>
 								<div>
 									<h4 className="font-medium mb-2">
-										What's Inside (per 2-capsule serving):
+										What&apos;s Inside (per 2-capsule serving):
 									</h4>
 									<p className="font-medium">Essential Vitamins & Minerals</p>
 									<ul className="list-disc pl-5 mt-1 space-y-1">
@@ -436,7 +439,7 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						title: "Long-Term Defense",
 						content: (
 							<div className="space-y-4 text-neutral-700">
-								<p>You don't need megadoses. You need smart defense.</p>
+								<p>You don&apos;t need megadoses. You need smart defense.</p>
 								<p>Super Immune works gradually and consistently to help you:</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>Strengthen your immune response.</li>
@@ -456,8 +459,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									You're not taking this just for winter — you're upgrading your system
-									year-round. Super Immune is:
+									You&apos;re not taking this just for winter — you&apos;re upgrading
+									your system year-round. Super Immune is:
 								</p>
 								<ul className="list-disc pl-5 space-y-1">
 									<li>GMP Certified.</li>
@@ -468,8 +471,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									<li>Free of artificial flavors.</li>
 								</ul>
 								<p>
-									Trusted by travelers, professionals, and anyone who doesn't have time
-									to get sick.
+									Trusted by travelers, professionals, and anyone who doesn&apos;t have
+									time to get sick.
 								</p>
 							</div>
 						),
@@ -479,8 +482,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 						content: (
 							<div className="space-y-4 text-neutral-700">
 								<p>
-									We're not here to fix you when you're down. We're here to help you stay
-									up.
+									We&apos;re not here to fix you when you&apos;re down. We&apos;re here
+									to help you stay up.
 								</p>
 								<p>
 									Super Immune is a daily commitment — not a quick fix. This is for those
@@ -509,8 +512,8 @@ export function ProductDropdowns({ product }: ProductDropdownsProps) {
 									</li>
 								</ul>
 								<p>
-									Pause, skip, or cancel anytime. You stay consistent an we'll take care
-									of the rest.
+									Pause, skip, or cancel anytime. You stay consistent an we&apos;ll take
+									care of the rest.
 								</p>
 								<p>twotaks delivers. Your body defends.</p>
 							</div>
