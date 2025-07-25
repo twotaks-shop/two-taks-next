@@ -88,6 +88,14 @@ export default function RootLayout({
 			<body
 				className={`${montserrat.variable} ${leagueSpartan.variable} antialiased`}
 			>
+				<noscript>
+					<img
+						height="1"
+						width="1"
+						style={{ display: "none" }}
+						src="https://www.facebook.com/tr?id=1309330127201165&ev=PageView&noscript=1"
+					/>
+				</noscript>
 				<MainContentWrapper>
 					<Navbar />
 					{children}
