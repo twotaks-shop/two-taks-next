@@ -25,7 +25,7 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-morning": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning_Mesa_de_trabajo_1.jpg?v=1753462916",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3_1.jpg?v=1753492830",
 			alt: "super morning",
 		},
 		{
