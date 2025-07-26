@@ -561,7 +561,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 							},
 							{
 								id: "/3.jpg",
-								url: "/2.jpg",
+								url: "/3.jpg",
 								alt: "Superhuman standards only",
 							},
 						]}
