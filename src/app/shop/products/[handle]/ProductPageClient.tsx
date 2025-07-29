@@ -25,7 +25,7 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-morning": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3_1.jpg?v=1753492830",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-morning.jpg?v=1753810273",
 			alt: "super morning",
 		},
 		{
@@ -42,7 +42,7 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-immune": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune_Mesa_de_trabajo_1.jpg?v=1753462916",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-immune.jpg?v=1753810274",
 			alt: "super immune",
 		},
 		{
@@ -59,7 +59,7 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-sleep": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep_Mesa_de_trabajo_1.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-sleep-pag-web.jpg?v=1753810273",
 			alt: "super sleep",
 		},
 		{
@@ -76,7 +76,7 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-brain": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain_Mesa_de_trabajo_1.jpg?v=1753462915",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-super-brain.jpg?v=1753810274",
 			alt: "super brain",
 		},
 		{
@@ -547,6 +547,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				<div className="mt-10">
 					<ProductPageCarousel
 						autoPlay={false}
+						showStars={false}
 						aspect="9/16"
 						images={[
 							{

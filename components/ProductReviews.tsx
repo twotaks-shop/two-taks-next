@@ -37,9 +37,26 @@ export function ProductReviews({ handle }: ReviewsProps) {
 
 	return (
 		<section className="container mx-auto px-6 md:mt-20">
-			<h2 className="text-2xl md:text-3xl font-heading-bold mb-8 text-center">
-				See Why Customers Call Us a Superhuman Experience
-			</h2>
+			<div className="flex justify-center flex-col items-center">
+				<h2 className="text-2xl md:text-3xl font-heading-bold mb-2 text-center">
+					The Human Upgrade System
+				</h2>
+				<div className="flex flex-col items-center mb-8">
+					<div className="flex items-center gap-1 mb-2">
+						{[...Array(5)].map((_, i) => (
+							<FaStar key={i} className="text-amber-400 text-lg" />
+						))}
+					</div>
+					<span className="text-gray-400 text-md ml-4 font-semibold">
+						50k+ five-star-reviews
+					</span>
+				</div>
+				<p className="text-lg text-neutral-900 mb-8 text-center sm:w-[600px]">
+					We’re not just making supplements — we’re redefining what it means to feel
+					human. Hundreds of twotaks users are already upgrading their focus, energy,
+					sleep, and immunity. Are you ready to feel super?
+				</p>
+			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 				{productReviews.reviews.slice(0, visibleReviews).map((review, index) => (

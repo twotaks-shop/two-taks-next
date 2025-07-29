@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
 
 export interface ProductImage {
 	id: string;
@@ -14,6 +15,7 @@ interface ProductPageCarouselProps {
 	aspect?: string;
 	autoPlay?: boolean;
 	interval?: number;
+	showStars?: boolean;
 }
 
 export default function ProductPageCarousel({
@@ -21,6 +23,7 @@ export default function ProductPageCarousel({
 	aspect = "4/5",
 	autoPlay = true,
 	interval = 5000,
+	showStars = true,
 }: ProductPageCarouselProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isHovering, setIsHovering] = useState(false);
@@ -109,6 +112,18 @@ export default function ProductPageCarousel({
 					</div>
 				</div>
 			</div>
+			{showStars && (
+				<div className="flex items-center -mt-18 mb-14">
+					<div className="flex items-center gap-1">
+						{[...Array(5)].map((_, i) => (
+							<FaStar key={i} className="text-amber-400 text-lg" />
+						))}
+					</div>
+					<span className="text-gray-400 text-md ml-4 font-semibold">
+						50k+ five-star-reviews
+					</span>
+				</div>
+			)}
 
 			{images.length > 1 && (
 				<>
