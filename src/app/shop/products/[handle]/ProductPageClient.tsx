@@ -707,28 +707,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 										d="M5 13l4 4L19 7"
 									/>
 								</svg>
-								<span>
-									{item.link ? (
-										<>
-											{item.text}
-											<a
-												href={item.link.href}
-												className="underline hover:text-neutral-600"
-											>
-												{item.link.label}
-											</a>
-										</>
-									) : item.highlight ? (
-										<>
-											<span className="font-semibold">{item.highlight}</span>
-											{item.text.replace(item.highlight, "")}
-										</>
-									) : item.bold ? (
-										<span className="font-semibold">{item.text}</span>
-									) : (
-										item.text
-									)}
-								</span>
+								<span className="font-semibold">{item.text}</span>
 							</li>
 						))}
 					</ul>
