@@ -593,49 +593,65 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				</div>
 			</div>
 
-			<div className="mb-10">
-				<h2 className="text-2xl font-heading-bold text-neutral-900">
-					We’re Here to Redefine Human Potential
-				</h2>
-				<p>
-					What if feeling <span className="font-semibold">Superhuman</span> wasn’t
-					just a dream &mdash; but a daily decision?
-				</p>
-				<p>
-					That’s the question that sparked{" "}
-					<span className="font-semibold">twotaks</span>. We set out to create
-					something different: four formulas that actually work — powered by the
-					highest quality ingredients and backed by science.
-				</p>
-				<p>
-					We combined ancient wisdom and modern performance science to design a full
-					system for your mind and body:
-				</p>
-				<ul className="list-disc list-inside space-y-1">
-					<li>
-						<span className="font-medium">Energy</span> to rise strong.
-					</li>
-					<li>
-						<span className="font-medium">Focus</span> to lead with clarity.
-					</li>
-					<li>
-						<span className="font-medium">Immunity</span> to stay resilient.
-					</li>
-					<li>
-						<span className="font-medium">Rest</span> to recover deeply.
-					</li>
-				</ul>
-				<p>
-					From that vision, <span className="font-semibold">Super Morning</span>,{" "}
-					<span className="font-semibold">Super Brain</span>,{" "}
-					<span className="font-semibold">Super Immune</span>, and{" "}
-					<span className="font-semibold">Super Sleep</span> were born.
-				</p>
-				<p>
-					Today, we’re not just building supplements. We’re building a movement —
-					powered by people who believe that being superhuman isn’t fiction.
-				</p>
-				<p>Ready for your next step?</p>
+			<div className="flex flex-col sm:flex-row-reverse mb-10 gap-10">
+				<div className="mx-auto max-w-[1000] px-4">
+					<Image
+						src="https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1067.png?v=1754082228"
+						alt="Pills fabrication process"
+						width={2000}
+						height={1333}
+						quality={100}
+						sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 75vw,
+           800px"
+						className="rounded-lg w-full h-auto"
+						priority
+					/>
+				</div>
+				<div>
+					<h2 className="text-2xl font-heading-bold text-neutral-900">
+						We’re Here to Redefine Human Potential
+					</h2>
+					<p className="mt-2">
+						What if feeling <span className="font-semibold">Superhuman</span> wasn’t
+						just a dream &mdash; but a daily decision?
+					</p>
+					<p>
+						That’s the question that sparked{" "}
+						<span className="font-semibold">twotaks</span>. We set out to create
+						something different: four formulas that actually work — powered by the
+						highest quality ingredients and backed by science.
+					</p>
+					<p>
+						We combined ancient wisdom and modern performance science to design a full
+						system for your mind and body:
+					</p>
+					<ul className="list-disc list-inside space-y-1">
+						<li>
+							<span className="font-medium">Energy</span> to rise strong.
+						</li>
+						<li>
+							<span className="font-medium">Focus</span> to lead with clarity.
+						</li>
+						<li>
+							<span className="font-medium">Immunity</span> to stay resilient.
+						</li>
+						<li>
+							<span className="font-medium">Rest</span> to recover deeply.
+						</li>
+					</ul>
+					<p>
+						From that vision, <span className="font-semibold">Super Morning</span>,{" "}
+						<span className="font-semibold">Super Brain</span>,{" "}
+						<span className="font-semibold">Super Immune</span>, and{" "}
+						<span className="font-semibold">Super Sleep</span> were born.
+					</p>
+					<p>
+						Today, we’re not just building supplements. We’re building a movement —
+						powered by people who believe that being superhuman isn’t fiction.
+					</p>
+					<p className="font-medium mt-2">Ready for your next step?</p>
+				</div>
 			</div>
 
 			{mainProductsCarousel.hasOwnProperty(product.handle) &&
@@ -658,19 +674,21 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 
 			<div className="bg-gray-100 py-10 px-6 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-24">
 				<div className="max-w-5xl mx-auto md:text-right text-neutral-800 space-y-4">
-					<h3 className="text-lg font-semibold">Checkout with confidence</h3>
+					<h3 className="text-lg font-semibold">Check out like a Superhuman</h3>
 					<ul className="space-y-3">
 						{[
 							{
-								text: "Backed by our ",
-								link: { href: "/guarantee", label: "Love-It Guarantee" },
+								text: "Fast & easy.",
 							},
-							{ text: "Easy and convenient", bold: true },
+							{ text: "We’ve got your back — chat, email or phone.", bold: true },
 							{
-								text: "Great support by phone, chat, or email",
-								highlight: "Great support",
+								text: "Fully encrypted. Zero stress.",
+								highlight: "Fully encrypted",
 							},
-							{ text: "Secure & encrypted checkout", highlight: "Secure & encrypted" },
+							{
+								text: "Quick shipping, no waiting games.",
+								highlight: "Quick shipping",
+							},
 						].map((item, idx) => (
 							<li
 								key={idx}
@@ -716,6 +734,57 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</ul>
 				</div>
 			</div>
+
+			{viewport == "desktop" ? (
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+					<Image
+						src="/1.jpg"
+						alt="Formulas for superhumans"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+					<Image
+						src="/2.jpg"
+						alt="How to take TwoTaks"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+					<Image
+						src="/3.jpg"
+						alt="Superhuman standards only"
+						className="w-full h-auto rounded-lg"
+						width={1000}
+						height={1000}
+					/>
+				</div>
+			) : (
+				<div className="my-10">
+					<ProductPageCarousel
+						autoPlay={false}
+						showStars={false}
+						aspect="9/16"
+						images={[
+							{
+								id: "/1.jpg",
+								url: "/1.jpg",
+								alt: "Formulas for superhumans",
+							},
+							{
+								id: "/2.jpg",
+								url: "/2.jpg",
+								alt: "How to take TwoTaks",
+							},
+							{
+								id: "/3.jpg",
+								url: "/3.jpg",
+								alt: "Superhuman standards only",
+							},
+						]}
+					/>
+				</div>
+			)}
 
 			{product && <ProductReviews handle={product.handle} />}
 
@@ -897,57 +966,6 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 							</div>
 						</div>
 					</div>
-				</div>
-			)}
-
-			{viewport == "desktop" ? (
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-					<Image
-						src="/1.jpg"
-						alt="Formulas for superhumans"
-						className="w-full h-auto rounded-lg"
-						width={1000}
-						height={1000}
-					/>
-					<Image
-						src="/2.jpg"
-						alt="How to take TwoTaks"
-						className="w-full h-auto rounded-lg"
-						width={1000}
-						height={1000}
-					/>
-					<Image
-						src="/3.jpg"
-						alt="Superhuman standards only"
-						className="w-full h-auto rounded-lg"
-						width={1000}
-						height={1000}
-					/>
-				</div>
-			) : (
-				<div className="mt-10">
-					<ProductPageCarousel
-						autoPlay={false}
-						showStars={false}
-						aspect="9/16"
-						images={[
-							{
-								id: "/1.jpg",
-								url: "/1.jpg",
-								alt: "Formulas for superhumans",
-							},
-							{
-								id: "/2.jpg",
-								url: "/2.jpg",
-								alt: "How to take TwoTaks",
-							},
-							{
-								id: "/3.jpg",
-								url: "/3.jpg",
-								alt: "Superhuman standards only",
-							},
-						]}
-					/>
 				</div>
 			)}
 
