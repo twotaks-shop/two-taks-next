@@ -9,7 +9,7 @@ type StandardItemProps = {
 	title: string;
 };
 
-const StandardItem = ({ icon, title }: StandardItemProps) => {
+export const StandardItem = ({ icon, title }: StandardItemProps) => {
 	return (
 		<div className="flex flex-col items-center">
 			<div className="w-37 h-37 sm:w-48 sm:h-48 relative mb-4 transition-transform duration-300 hover:scale-105">

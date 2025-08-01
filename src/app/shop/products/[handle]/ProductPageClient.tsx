@@ -19,6 +19,9 @@ import { FaStar } from "react-icons/fa6";
 
 import { tabs } from "../../../../../confg/ingredients";
 import FAQ from "../../../../../components/FAQ";
+import { ProductDropdowns } from "../../../../../components/shop/ProductDropdowns";
+import { standardsData } from "../../../../../confg/standards";
+import { StandardItem } from "../../../../../components/Standards";
 
 interface ProductPageClientProps {
 	handle: string;
@@ -947,6 +950,39 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</div>
 				</div>
 			)}
+
+			{(product.handle === "super-morning" ||
+				product.handle === "super-brain" ||
+				product.handle === "super-sleep" ||
+				product.handle === "super-immune") && (
+				<ProductDropdowns product={product.handle} />
+			)}
+			
+			<section className="py-16 md:py-24 px-4 bg-gray-50 mt-24 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+				<div className="container mx-auto max-w-6xl">
+					<div className="text-center mb-12 md:mb-16">
+						<h2 className="text-4xl md:text-5xl font-bold mb-4 font-brand tracking-tight text-gray-900">
+							Built Clean for Peak Performance
+						</h2>
+						<p className="text-2xl md:text-3xl text-gray-600 font-light">
+							Superhuman standards only.
+						</p>
+						<p className="text-xl md:text-2xl text-gray-600 font-light mt-2">
+							Clean. Powerful. Purposeful.
+						</p>
+					</div>
+
+					<div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20">
+						{standardsData.map((standard) => (
+							<StandardItem
+								key={standard.id}
+								icon={standard.icon}
+								title={standard.title}
+							/>
+						))}
+					</div>
+				</div>
+			</section>
 
 			<div className="mt-16 text-center">
 				<h3 className="text-2xl md:text-3xl font-heading-bold mb-4">
