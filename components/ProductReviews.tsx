@@ -36,7 +36,7 @@ export function ProductReviews({ handle }: ReviewsProps) {
 	};
 
 	return (
-		<section className="container mx-auto px-6 md:mt-20">
+		<section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gray-50  p-16">
 			<div className="flex justify-center flex-col items-center">
 				<h2 className="text-2xl md:text-3xl font-heading-bold mb-2 text-center">
 					The Human Upgrade System

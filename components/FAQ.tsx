@@ -8,11 +8,20 @@ type FaqItemProps = {
 	answer: string;
 	isOpen: boolean;
 	toggleOpen: () => void;
+	className?: string;
 };
 
-const FaqItem = ({ question, answer, isOpen, toggleOpen }: FaqItemProps) => {
+const FaqItem = ({
+	question,
+	answer,
+	isOpen,
+	toggleOpen,
+	className,
+}: FaqItemProps) => {
 	return (
-		<div className="border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200">
+		<div
+			className={`border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200 ${className}`}
+		>
 			<button
 				className="w-full flex items-center justify-between py-6 text-left px-4 group"
 				onClick={toggleOpen}

@@ -14,8 +14,11 @@ import { ProductReviews } from "../../../../../components/ProductReviews";
 import ProductPageCarousel, {
 	ProductImage,
 } from "../../../../../components/shop/ProductPageCarousel";
-import { ProductDropdowns } from "../../../../../components/shop/ProductDropdowns";
 import useViewport from "../../../../../hooks/useViewport";
+import { FaStar } from "react-icons/fa6";
+
+import { tabs } from "../../../../../confg/ingredients";
+import FAQ from "../../../../../components/FAQ";
 
 interface ProductPageClientProps {
 	handle: string;
@@ -142,6 +145,49 @@ async function fetchData(handle: string) {
 	};
 }
 
+// Helper function to extract the key function from ingredient descriptions
+function extractKeyFunction(description: string): string {
+	// Look for phrases that typically describe function
+	const functionPhrases = [
+		"helps",
+		"supports",
+		"enhances",
+		"improves",
+		"boosts",
+		"stimulates",
+		"reduces",
+		"increases",
+		"activates",
+		"balances",
+		"promotes",
+		"regulates",
+		"assists",
+		"strengthens",
+		"calms",
+		"delivers",
+	];
+
+	// Get first sentence
+	const firstSentence = description.split(".")[0] + ".";
+
+	// Look for a shorter statement with a function phrase
+	for (const phrase of functionPhrases) {
+		const regex = new RegExp(`(\\w+\\s+${phrase}[^,;.]{3,40})`, "i");
+		const match = description.match(regex);
+		if (match && match[1]) {
+			return match[1].trim().charAt(0).toUpperCase() + match[1].trim().slice(1);
+		}
+	}
+
+	// Fallback to first sentence if it's short enough
+	if (firstSentence.length < 100) {
+		return firstSentence;
+	}
+
+	// Last resort: just the first 70 chars with ellipsis
+	return description.substring(0, 70) + "...";
+}
+
 export default function ProductPageClient({ handle }: ProductPageClientProps) {
 	const [product, setProduct] = useState<ShopifyProduct | null>(null);
 	const [relatedProducts, setRelatedProducts] = useState<ShopifyProduct[]>([]);
@@ -151,6 +197,8 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 	>(null);
 	const [quantity, setQuantity] = useState(1);
 	const [isLoading, setIsLoading] = useState(true);
+	const [productIngredients, setProductIngredients] = useState<any[]>([]);
+	const [showDragHint, setShowDragHint] = useState(true);
 	const { addItem, toggleCart } = useCartStore();
 
 	const video1Ref = useRef<HTMLVideoElement>(null);
@@ -171,6 +219,41 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 			if (data.product.variants && data.product.variants.length > 0) {
 				setSelectedVariantId(data.product.variants[0].id);
 			}
+
+			// Find product category and ingredients
+			let productCategory = "";
+			if (handle.includes("super-morning")) {
+				productCategory = "Super Morning";
+			} else if (handle.includes("super-immune")) {
+				productCategory = "Super Immune";
+			} else if (handle.includes("super-sleep")) {
+				productCategory = "Super Sleep";
+			} else if (handle.includes("super-brain")) {
+				productCategory = "Super Brain";
+			}
+
+			if (productCategory) {
+				const categoryTab = tabs.find((tab) => tab.category === productCategory);
+				if (categoryTab) {
+					const shuffledIngredients = [...categoryTab.ingredients]
+						.sort(() => 0.5 - Math.random())
+						.slice(0, Math.min(5, categoryTab.ingredients.length))
+						.map((ingredient) => {
+							const keyFunction = extractKeyFunction(ingredient.description);
+
+							return {
+								...ingredient,
+								keyFunction,
+							};
+						});
+					setProductIngredients(shuffledIngredients);
+				}
+			}
+
+			setTimeout(() => {
+				setShowDragHint(false);
+			}, 5000);
+
 			setIsLoading(false);
 		}
 
@@ -336,6 +419,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				mainProductsCarousel.hasOwnProperty(product.handle) && (
 					<ProductPageCarousel
 						autoPlay={false}
+						showStars={false}
 						aspect="9/15"
 						images={mainProductsCarousel[product.handle]}
 					/>
@@ -375,6 +459,16 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				</div>
 
 				<div className="flex flex-col">
+					<div className="flex mb-8">
+						<div className="flex items-center gap-1 mb-2">
+							{[...Array(5)].map((_, i) => (
+								<FaStar key={i} className="text-amber-400 text-lg" />
+							))}
+						</div>
+						<span className="text-gray-400 text-md ml-4 font-semibold">
+							50k+ five-star-reviews
+						</span>
+					</div>
 					<h1 className="text-3xl lg:text-4xl font-heading-medium mb-6 text-neutral-900">
 						{product.title}
 					</h1>
@@ -499,6 +593,51 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				</div>
 			</div>
 
+			<div className="mb-10">
+				<h2 className="text-2xl font-heading-bold text-neutral-900">
+					We’re Here to Redefine Human Potential
+				</h2>
+				<p>
+					What if feeling <span className="font-semibold">Superhuman</span> wasn’t
+					just a dream &mdash; but a daily decision?
+				</p>
+				<p>
+					That’s the question that sparked{" "}
+					<span className="font-semibold">twotaks</span>. We set out to create
+					something different: four formulas that actually work — powered by the
+					highest quality ingredients and backed by science.
+				</p>
+				<p>
+					We combined ancient wisdom and modern performance science to design a full
+					system for your mind and body:
+				</p>
+				<ul className="list-disc list-inside space-y-1">
+					<li>
+						<span className="font-medium">Energy</span> to rise strong.
+					</li>
+					<li>
+						<span className="font-medium">Focus</span> to lead with clarity.
+					</li>
+					<li>
+						<span className="font-medium">Immunity</span> to stay resilient.
+					</li>
+					<li>
+						<span className="font-medium">Rest</span> to recover deeply.
+					</li>
+				</ul>
+				<p>
+					From that vision, <span className="font-semibold">Super Morning</span>,{" "}
+					<span className="font-semibold">Super Brain</span>,{" "}
+					<span className="font-semibold">Super Immune</span>, and{" "}
+					<span className="font-semibold">Super Sleep</span> were born.
+				</p>
+				<p>
+					Today, we’re not just building supplements. We’re building a movement —
+					powered by people who believe that being superhuman isn’t fiction.
+				</p>
+				<p>Ready for your next step?</p>
+			</div>
+
 			{mainProductsCarousel.hasOwnProperty(product.handle) &&
 				mainProductsCarousel[product.handle]?.length > 0 &&
 				viewport === "desktop" &&
@@ -517,7 +656,249 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</div>
 				)}
 
+			<div className="bg-gray-100 py-10 px-6 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-24">
+				<div className="max-w-5xl mx-auto md:text-right text-neutral-800 space-y-4">
+					<h3 className="text-lg font-semibold">Checkout with confidence</h3>
+					<ul className="space-y-3">
+						{[
+							{
+								text: "Backed by our ",
+								link: { href: "/guarantee", label: "Love-It Guarantee" },
+							},
+							{ text: "Easy and convenient", bold: true },
+							{
+								text: "Great support by phone, chat, or email",
+								highlight: "Great support",
+							},
+							{ text: "Secure & encrypted checkout", highlight: "Secure & encrypted" },
+						].map((item, idx) => (
+							<li
+								key={idx}
+								className="flex items-start justify-start md:justify-end text-sm"
+							>
+								<svg
+									className="w-4 h-4 mt-1 mr-2 text-green-600 shrink-0"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M5 13l4 4L19 7"
+									/>
+								</svg>
+								<span>
+									{item.link ? (
+										<>
+											{item.text}
+											<a
+												href={item.link.href}
+												className="underline hover:text-neutral-600"
+											>
+												{item.link.label}
+											</a>
+										</>
+									) : item.highlight ? (
+										<>
+											<span className="font-semibold">{item.highlight}</span>
+											{item.text.replace(item.highlight, "")}
+										</>
+									) : item.bold ? (
+										<span className="font-semibold">{item.text}</span>
+									) : (
+										item.text
+									)}
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+
 			{product && <ProductReviews handle={product.handle} />}
+
+			{productIngredients.length > 0 && (
+				<div className="my-16">
+					<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+						<div>
+							<h2 className="text-2xl font-heading-bold text-neutral-900">
+								Unleash Your Superhuman Self
+							</h2>
+							<p className="text-sm font-medium text-neutral-900 px-4 py-2">
+								Every capsule is a tool and every formula is a system. So, every day is
+								a chance to feel unstoppable. At twotaks, we blend cutting-edge science
+								with ancient wisdom to deliver real results — without shortcuts. These
+								are the 28 ingredients behind your superhuman upgrade.
+							</p>
+						</div>
+
+						<Link
+							href="/ingredients"
+							className="text-sm font-medium text-neutral-900 border border-neutral-300 rounded-full px-4 py-2 hover:bg-neutral-50 transition-colors"
+						>
+							View all ingredients
+						</Link>
+					</div>
+
+					{showDragHint && (
+						<div className="flex items-center justify-center gap-2 mb-4 text-neutral-500 text-sm bg-neutral-50 py-2 px-3 rounded-lg shadow-sm">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M8 13H16M5 7H19M8 17H16"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								/>
+							</svg>
+							<span>Drag horizontally to explore ingredients</span>
+							<svg
+								className="ml-1 animate-drag-hint"
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M17 8L21 12M21 12L17 16M21 12H3"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								/>
+							</svg>
+						</div>
+					)}
+
+					<div className="relative">
+						<div
+							id="ingredients-carousel"
+							className="overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide cursor-grab select-none"
+							onTouchStart={(e) => {
+								// Store the initial touch position
+								const touchDownAt = e.touches[0].clientX;
+								const carousel = e.currentTarget;
+								carousel.dataset.touchStartX = touchDownAt.toString();
+							}}
+							onTouchEnd={(e) => {
+								// Get the final touch position
+								const carousel = e.currentTarget;
+								const touchStartX = parseInt(carousel.dataset.touchStartX || "0");
+								const touchEndX = e.changedTouches[0].clientX;
+								const diff = touchStartX - touchEndX;
+
+								// If the swipe was significant, scroll the carousel
+								if (Math.abs(diff) > 50) {
+									carousel.scrollBy({
+										left: diff > 0 ? 200 : -200,
+										behavior: "smooth",
+									});
+								}
+							}}
+							onMouseDown={(e) => {
+								const carousel = e.currentTarget;
+								carousel.dataset.isDown = "true";
+								carousel.dataset.startX = e.pageX.toString();
+								carousel.dataset.scrollLeft = carousel.scrollLeft.toString();
+								carousel.classList.add("cursor-grabbing");
+								setShowDragHint(false);
+							}}
+							onMouseLeave={(e) => {
+								const carousel = e.currentTarget;
+								carousel.dataset.isDown = "false";
+								carousel.classList.remove("cursor-grabbing");
+							}}
+							onMouseUp={(e) => {
+								const carousel = e.currentTarget;
+								carousel.dataset.isDown = "false";
+								carousel.classList.remove("cursor-grabbing");
+							}}
+							onMouseMove={(e) => {
+								const carousel = e.currentTarget;
+								if (carousel.dataset.isDown !== "true") return;
+								e.preventDefault();
+
+								const startX = parseInt(carousel.dataset.startX || "0");
+								const scrollLeft = parseInt(carousel.dataset.scrollLeft || "0");
+								const x = e.pageX;
+								const walk = (x - startX) * 1.5; // Reduced scroll speed multiplier for more precise control
+								carousel.scrollLeft = scrollLeft - walk;
+							}}
+						>
+							<div className="flex space-x-6 min-w-max">
+								{productIngredients.map((ingredient) => (
+									<div
+										key={ingredient.id}
+										className="w-72 md:w-80 flex-shrink-0 bg-neutral-50 rounded-lg p-3 md:p-4 ingredient-card relative"
+										id={ingredient.id}
+									>
+										<div className="aspect-square relative overflow-hidden bg-white rounded-lg mb-4">
+											<Image
+												src={ingredient.image}
+												alt={ingredient.name}
+												fill
+												className="object-cover transition-transform hover:scale-105 duration-500 rounded-md pointer-events-none"
+												sizes="(max-width: 768px) 100vw, 256px"
+											/>
+										</div>
+										<h3 className="text-lg font-medium font-heading-medium text-neutral-900 mb-1 line-clamp-2">
+											{ingredient.name}
+										</h3>
+										<div className="border-t border-neutral-200 pt-3 mt-2">
+											<div className="text-xs text-neutral-600 font-medium uppercase mb-1">
+												Key Function
+											</div>
+											<div className="text-neutral-900 text-sm line-clamp-2 min-h-[2.5rem]">
+												{ingredient.keyFunction ||
+													ingredient.description.substring(
+														0,
+														ingredient.description.indexOf(".") + 1,
+													)}
+												<div className="mt-1 text-xs text-neutral-500">
+													Found in {ingredient.category}
+												</div>
+											</div>
+										</div>
+										<div className="flex justify-end">
+											<Link
+												href={`/ingredients#${ingredient.id}`}
+												className="mt-3 flex items-center justify-center w-8 h-8 rounded-full border border-neutral-300 text-neutral-600 hover:bg-white hover:shadow-sm transition-all hover:scale-110"
+												aria-label={`Learn more about ${ingredient.name}`}
+											>
+												<span className="sr-only">Learn more about {ingredient.name}</span>
+												<svg
+													width="16"
+													height="16"
+													viewBox="0 0 24 24"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M12 4V20M4 12H20"
+														stroke="currentColor"
+														strokeWidth="2"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													/>
+												</svg>
+											</Link>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			)}
 
 			{viewport == "desktop" ? (
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
@@ -568,13 +949,6 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 						]}
 					/>
 				</div>
-			)}
-
-			{(product.handle === "super-morning" ||
-				product.handle === "super-brain" ||
-				product.handle === "super-sleep" ||
-				product.handle === "super-immune") && (
-				<ProductDropdowns product={product.handle} />
 			)}
 
 			<div className="mt-16 text-center">
@@ -665,6 +1039,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					</div>
 				</div>
 			)}
+			<FAQ className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gray-50 mt-24" />
 		</main>
 	);
 }
