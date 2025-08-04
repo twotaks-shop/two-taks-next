@@ -416,50 +416,57 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					← Back to shop
 				</Link>
 			</div>
-			{mainProductsCarousel.hasOwnProperty(product.handle) &&
+
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
+				{mainProductsCarousel.hasOwnProperty(product.handle) &&
 				mainProductsCarousel[product.handle]?.length > 0 &&
-				viewport === "mobile" &&
-				mainProductsCarousel.hasOwnProperty(product.handle) && (
+				mainProductsCarousel.hasOwnProperty(product.handle) ? (
 					<ProductPageCarousel
 						autoPlay={false}
 						showStars={false}
 						aspect="9/15"
-						images={mainProductsCarousel[product.handle]}
+						images={[
+							...mainProductsCarousel[product.handle],
+							...product.images.map((image) => ({
+								id: image.id,
+								url: image.url,
+								alt: image.altText || "",
+							})),
+						]}
 					/>
-				)}
-
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
-				<div className="space-y-4">
-					<div className="relative aspect-square bg-neutral-50 rounded-lg overflow-hidden">
-						<Image
-							src={imageSrc}
-							alt={imageAlt}
-							fill
-							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-							className="object-cover"
-							priority
-						/>
-					</div>
-
-					{additionalImages.length > 0 && (
-						<div className="grid grid-cols-4 gap-2">
-							{additionalImages.map((image, index) => (
-								<div
-									key={image.id || index}
-									className="relative aspect-square bg-neutral-50 rounded-md overflow-hidden"
-								>
-									<Image
-										src={image.url || PLACEHOLDER_IMAGE_URL}
-										alt={image.altText || `${product.title} view ${index + 2}`}
-										fill
-										sizes="(max-width: 768px) 25vw, 20vw"
-										className="object-cover"
-									/>
-								</div>
-							))}
+				) : (
+					<div className="space-y-4">
+						<div className="relative aspect-square bg-neutral-50 rounded-lg overflow-hidden">
+							<Image
+								src={imageSrc}
+								alt={imageAlt}
+								fill
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+								className="object-cover"
+								priority
+							/>
 						</div>
-					)}
-				</div>
+
+						{additionalImages.length > 0 && (
+							<div className="grid grid-cols-4 gap-2">
+								{additionalImages.map((image, index) => (
+									<div
+										key={image.id || index}
+										className="relative aspect-square bg-neutral-50 rounded-md overflow-hidden"
+									>
+										<Image
+											src={image.url || PLACEHOLDER_IMAGE_URL}
+											alt={image.altText || `${product.title} view ${index + 2}`}
+											fill
+											sizes="(max-width: 768px) 25vw, 20vw"
+											className="object-cover"
+										/>
+									</div>
+								))}
+							</div>
+						)}
+					</div>
+				)}
 
 				<div className="flex flex-col">
 					<div className="flex mb-8">
@@ -656,24 +663,6 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 					<p className="font-medium mt-2">Ready for your next step?</p>
 				</div>
 			</div>
-
-			{mainProductsCarousel.hasOwnProperty(product.handle) &&
-				mainProductsCarousel[product.handle]?.length > 0 &&
-				viewport === "desktop" &&
-				mainProductsCarousel.hasOwnProperty(product.handle) && (
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 mb-20">
-						{mainProductsCarousel[product.handle].map((image, index) => (
-							<Image
-								key={index}
-								src={image.url}
-								alt={image.alt}
-								className="w-full h-auto rounded-lg"
-								width={1000}
-								height={1000}
-							/>
-						))}
-					</div>
-				)}
 
 			<div className="bg-gray-100 py-10 px-6 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-24">
 				<div className="max-w-5xl mx-auto md:text-right text-neutral-800 space-y-4">
@@ -957,7 +946,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 				product.handle === "super-immune") && (
 				<ProductDropdowns product={product.handle} />
 			)}
-			
+
 			<section className="py-16 md:py-24 px-4 bg-gray-50 mt-24 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
 				<div className="container mx-auto max-w-6xl">
 					<div className="text-center mb-12 md:mb-16">
