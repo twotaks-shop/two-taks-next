@@ -48,7 +48,7 @@ export function ProductReviews({ handle }: ReviewsProps) {
 						))}
 					</div>
 					<span className="text-gray-400 text-md ml-4 font-semibold">
-						50k+ five-star-reviews
+						500+ five-star-reviews
 					</span>
 				</div>
 				<p className="text-lg text-neutral-900 mb-8 text-center sm:w-[600px]">

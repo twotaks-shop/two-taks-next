@@ -120,7 +120,7 @@ export default function ProductPageCarousel({
 						))}
 					</div>
 					<span className="text-gray-400 text-md ml-4 font-semibold">
-						50k+ five-star-reviews
+						500+ five-star-reviews
 					</span>
 				</div>
 			)}
