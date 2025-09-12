@@ -498,14 +498,7 @@ export const REVIEWS: Review[] = [
 				occupation: "Accountant",
 				location: "Miami, FL",
 			},
-			{
-				title:
-					"Seriously, I didn’t expect much, but wow… Super Brain works, until TikTok happened.",
-				author: "Daniela Silva",
-				age: 31,
-				occupation: "Graphic Designer",
-				location: "Austin, TX",
-			},
+
 			{
 				title: "I thought I’d be bouncing off the walls like Sheldon on sugar.",
 				content: "Nope, just… normal.",
