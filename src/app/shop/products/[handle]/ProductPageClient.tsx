@@ -31,100 +31,145 @@ const mainProductsCarousel: { [key: string]: ProductImage[] } = {
 	"super-morning": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-morning.jpg?v=1753810273",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/1_9ded4d60-379a-4221-91ce-6a7fce76972c.jpg?v=1757687278",
 			alt: "super morning",
 		},
 		{
 			id: "2",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning-02.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/2_850266dd-d563-4480-a132-a74b9ae44c69.jpg?v=1757687278",
 			alt: "super morning",
 		},
 		{
 			id: "3",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_morning-03.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3_50465aa6-6036-48b9-9823-c1cab139cbcb.jpg?v=1757687278",
+			alt: "super morning",
+		},
+		{
+			id: "4",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/4_c15d6f81-016f-45ab-9091-ed534cba5156.jpg?v=1757687278",
+			alt: "super morning",
+		},
+		{
+			id: "5",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/5_1422a382-5c62-4253-a274-cdaf7295276c.jpg?v=1757687278",
 			alt: "super morning",
 		},
 	],
 	"super-immune": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-immune.jpg?v=1753810274",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/1_ce362fe5-f825-4a32-9ba7-77b77ca87107.jpg?v=1757687275",
 			alt: "super immune",
 		},
 		{
 			id: "2",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune-02.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/2_8337e742-380c-4388-b36b-4e01a4673e39.jpg?v=1757687274",
 			alt: "super immune",
 		},
 		{
 			id: "3",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_immune-03.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3_14df85b8-7da7-42ec-9a9c-fbf27a360810.jpg?v=1757687274",
+			alt: "super immune",
+		},
+		{
+			id: "4",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/4_527e5c9d-5596-4aeb-ba65-f510e9edfbb1.jpg?v=1757687274",
+			alt: "super immune",
+		},
+		{
+			id: "5",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/5_f32d18f0-f2f1-49d1-84b6-bca526bc240e.jpg?v=1757687275",
 			alt: "super immune",
 		},
 	],
 	"super-sleep": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-Super-sleep-pag-web.jpg?v=1753810273",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/1_37eed49c-925e-48af-ba11-555e74fcf376.jpg?v=1757687283",
 			alt: "super sleep",
 		},
 		{
 			id: "2",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep-02.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/2_671f2b2d-7498-4d8e-a5e1-b5cb7e17d8e6.jpg?v=1757687283",
 			alt: "super sleep",
 		},
 		{
 			id: "3",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_Super_sleep-03.jpg?v=1753462913",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3_8a3054af-9302-4e24-ac14-4335ab19b658.jpg?v=1757687283",
+			alt: "super sleep",
+		},
+		{
+			id: "4",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/4_6850dd7a-f4ba-4816-adc1-f33a3e4d2cd7.jpg?v=1757687284",
+			alt: "super sleep",
+		},
+		{
+			id: "5",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/5_7ffb542b-d524-4e1d-82c6-5c9a2e552eee.jpg?v=1757687284",
 			alt: "super sleep",
 		},
 	],
 	"super-brain": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel-super-brain.jpg?v=1753810274",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/1.jpg?v=1757687266",
 			alt: "super brain",
 		},
 		{
 			id: "2",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain-02.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/2.jpg?v=1757687266",
 			alt: "super brain",
 		},
 		{
 			id: "3",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_super_brain-03.jpg?v=1753462915",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/3.jpg?v=1757687265",
+			alt: "super brain",
+		},
+		{
+			id: "4",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/4.jpg?v=1757687266	",
+			alt: "super brain",
+		},
+		{
+			id: "5",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/5.jpg?v=1757687266",
 			alt: "super brain",
 		},
 	],
 	"super-bundle": [
 		{
 			id: "1",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle_Mesa_de_trabajo_1.jpg?v=1753462909",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle_Mesa_de_trabajo_1_1ed0b5aa-ba57-4a07-96a4-43a8014a1d70.jpg?v=1757687298",
 			alt: "super bundle",
 		},
 		{
 			id: "2",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-02.jpg?v=1753462914",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-02_a705ab0d-7105-461a-aa4f-406c9b1658d8.jpg?v=1757687299",
 			alt: "super bundle",
 		},
 		{
 			id: "3",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-03.jpg?v=1753462913",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-03_57a521d1-078d-4445-8f2a-f9a9b461a687.jpg?v=1757687299",
 			alt: "super bundle",
 		},
 		{
 			id: "4",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-04.jpg?v=1753462915",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-04_5725fadc-bf5b-491c-8d9a-1ec1762387af.jpg?v=1757687299",
 			alt: "super bundle",
 		},
 		{
 			id: "5",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-05.jpg?v=1753462915",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-05_8a4e732a-322c-484d-9d39-58f2a3e8bbff.jpg?v=1757687299",
 			alt: "super bundle",
 		},
 		{
 			id: "6",
-			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-06.jpg?v=1753462910",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/Carrusel_bundle-06_e5141405-9f6c-45ed-b068-14710aafd128.jpg?v=17576872980",
+			alt: "super bundle",
+		},
+		{
+			id: "7",
+			url: "https://cdn.shopify.com/s/files/1/0767/4242/6880/files/7.jpg?v=1757687299",
 			alt: "super bundle",
 		},
 	],
