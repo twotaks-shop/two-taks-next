@@ -13,7 +13,7 @@ export default function AboutUs({ className = "" }: { className?: string }) {
 					<div className="w-full lg:w-1/2 mb-8 lg:mb-0">
 						<div className="relative rounded-xl overflow-hidden shadow-lg">
 							<div className="absolute -inset-2 bg-gray-50 rounded-full opacity-30 blur-xl"></div>
-							<div className="aspect-w-4 aspect-h-3 relative w-full h-[350px] sm:h-[450px] lg:h-[500px]">
+							<div className="aspect-w-4 aspect-h-3 relative w-full h-[350px] sm:h-[450px] lg:hpx]">
 								<Image
 									src="/about-us/about-us-2.png"
 									alt="Two Taks team"

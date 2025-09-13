@@ -10,7 +10,6 @@ interface Review {
 		location: string;
 	}[];
 }
-
 export const REVIEWS: Review[] = [
 	{
 		handle: "super-immune",
@@ -60,6 +59,8 @@ export const REVIEWS: Review[] = [
 				age: 28,
 				occupation: "Gamer",
 				location: "Dallas, TX",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9569.heic?v=1757802796",
 			},
 			{
 				title: "The whole department went down with the flu, but I’m still here",
@@ -95,6 +96,8 @@ export const REVIEWS: Review[] = [
 				age: 40,
 				occupation: "Dance Teacher",
 				location: "Orlando, FL",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9545.heic?v=1757802802",
 			},
 			{
 				title: "People cough over me in interviews",
@@ -105,7 +108,7 @@ export const REVIEWS: Review[] = [
 				occupation: "Human Resources Manager",
 				location: "Wyoming",
 				image:
-					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8080.heic?v=1753472963",
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_8080.heic?v=1757802799",
 			},
 			{
 				title: "Immune Like a Boss",
@@ -124,6 +127,8 @@ export const REVIEWS: Review[] = [
 				age: 30,
 				occupation: "Tour Guide",
 				location: "New Orleans, LA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1603.heic?v=1757802802",
 			},
 		],
 	},
@@ -138,6 +143,8 @@ export const REVIEWS: Review[] = [
 				age: 26,
 				occupation: "Freelance Writer",
 				location: "New York, NY",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1609.heic?v=1757802610",
 			},
 			{
 				title: "Super Sleep, Super Weird Dreams",
@@ -156,6 +163,8 @@ export const REVIEWS: Review[] = [
 				age: 27,
 				occupation: "Wedding Planner",
 				location: "Los Angeles, CA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1596.heic?v=1757802609",
 			},
 			{
 				title:
@@ -174,6 +183,8 @@ export const REVIEWS: Review[] = [
 				age: 30,
 				occupation: "Marketing Coordinator",
 				location: "Orlando, FL",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9556.heic?v=1757802610",
 			},
 			{
 				title: "Finally Slept Like a Rock",
@@ -200,6 +211,8 @@ export const REVIEWS: Review[] = [
 				age: 41,
 				occupation: "Truck Driver",
 				location: "Tallahassee, FL",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9570.heic?v=1757802610",
 			},
 			{
 				title: "Farm-Strong Sleep",
@@ -233,7 +246,7 @@ export const REVIEWS: Review[] = [
 				occupation: "musician",
 				location: "L.A.",
 				image:
-					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8104.heic?v=1753472965",
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_8104.heic?v=1757802717",
 			},
 			{
 				title: "I work up and made a smoothie before 9am",
@@ -244,7 +257,7 @@ export const REVIEWS: Review[] = [
 				occupation: "Sport Model",
 				location: "Miami",
 				image:
-					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/REVIEW_8097.heic?v=1753472965",
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_8097.heic?v=1757802717",
 			},
 			{
 				title: "Better Than My Ex’s Energy",
@@ -262,6 +275,8 @@ export const REVIEWS: Review[] = [
 				age: 34,
 				occupation: "Barista",
 				location: "Denver, CO",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1606.heic?v=1757802719",
 			},
 			{
 				title:
@@ -299,6 +314,8 @@ export const REVIEWS: Review[] = [
 				age: 29,
 				occupation: "Personal Trainer",
 				location: "Denver, CO",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9559.heic?v=1757802719",
 			},
 			{
 				title: "Survived a 12-hour study sesh and still made it to brunch.",
@@ -342,6 +359,8 @@ export const REVIEWS: Review[] = [
 				age: 47,
 				occupation: "Choir Director",
 				location: "Little Rock, AR",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9547.heic?v=1757802718",
 			},
 			{
 				title: "Friday Night Lights Energy",
@@ -378,6 +397,8 @@ export const REVIEWS: Review[] = [
 				age: 39,
 				occupation: "Sales Rep",
 				location: "Memphis, TN",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1602.heic?v=1757802719",
 			},
 		],
 	},
@@ -400,6 +421,8 @@ export const REVIEWS: Review[] = [
 				age: 33,
 				occupation: "Construction Manager",
 				location: "Phoenix, AZ",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1600.heic?v=1757802910",
 			},
 			{
 				title: "I couldn't remember my own Netflix password last month.",
@@ -427,6 +450,8 @@ export const REVIEWS: Review[] = [
 				age: 25,
 				occupation: "College Student",
 				location: "Chicago, IL",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9557.heic?v=1757802910",
 			},
 			{
 				title: "Finals Lifesaver",
@@ -463,6 +488,8 @@ export const REVIEWS: Review[] = [
 				age: 41,
 				occupation: "Chef",
 				location: "Atlanta, GA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_8106.heic?v=1757802908",
 			},
 			{
 				title: "Feels like I’ve upgraded",
@@ -489,6 +516,8 @@ export const REVIEWS: Review[] = [
 				age: 30,
 				occupation: "Marketer",
 				location: "Philadelphia, PA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9550.heic?v=1757802909",
 			},
 			{
 				title: "I expected a fireworks show in my brain after taking Super Brain.",
@@ -520,6 +549,8 @@ export const REVIEWS: Review[] = [
 				age: 25,
 				occupation: "Content Creator",
 				location: "Portland, OR",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1610.heic?v=1757803007",
 			},
 			{
 				title: "The Bundle Made Me a Machine",
@@ -538,6 +569,8 @@ export const REVIEWS: Review[] = [
 				age: 29,
 				occupation: "Graphic Designer",
 				location: "Austin, TX",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1597.heic?v=1757803009",
 			},
 			{
 				title: "From hot mess to high-functioning human",
@@ -556,6 +589,8 @@ export const REVIEWS: Review[] = [
 				age: 38,
 				occupation: "Lawyer",
 				location: "San Francisco, CA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1584.heic?v=1757803010",
 			},
 			{
 				title:
@@ -582,6 +617,8 @@ export const REVIEWS: Review[] = [
 				age: 32,
 				occupation: "HR Recruiter",
 				location: "Atlanta, GA",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_9561.heic?v=1757803009",
 			},
 			{
 				title: "Pivot… my mood!",
@@ -609,6 +646,8 @@ export const REVIEWS: Review[] = [
 				age: 37,
 				occupation: "Realtor",
 				location: "Miami, FL",
+				image:
+					"https://cdn.shopify.com/s/files/1/0767/4242/6880/files/IMG_1613.heic?v=1757803006",
 			},
 		],
 	},

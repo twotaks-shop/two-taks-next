@@ -521,7 +521,7 @@ export default function ProductPageClient({ handle }: ProductPageClientProps) {
 							))}
 						</div>
 						<span className="text-gray-400 text-md ml-4 font-semibold">
-							50k+ five-star-reviews
+							500+ five-star-reviews
 						</span>
 					</div>
 					<h1 className="text-3xl lg:text-4xl font-heading-medium mb-6 text-neutral-900">
